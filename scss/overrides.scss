@@ -72,17 +72,13 @@ $btn-ghost-active-color-dark: rgba($white, 0.15);
 }
 
 // ============================================================================
-// Typography - Dual-Font System
+// Typography - Dual-Font System (AP x Harmony)
 // ============================================================================
 
-// Google Fonts Import (handled via @import in theme.scss)
-// Logo Font: Elegant serif (custom/Times-like elongated)
-// Headings: Montserrat or Lato (geometric, architectural)
-// Body: Roboto or Open Sans (highly legible, neutral)
-
-$font-family-logo: "Playfair Display", "Times New Roman", Times, serif !default;  // Elegant serif for logo
-$font-family-heading: "Montserrat", "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !default;  // Geometric sans for headings
-$font-family-body: "Roboto", "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !default;  // Legible sans for body
+// Google Fonts: Inter for UI, Montserrat for headings, Playfair Display for logo
+$font-family-logo: "Playfair Display", Georgia, "Times New Roman", serif !default;   // Brand / logo
+$font-family-heading: "Montserrat", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !default; // Headings
+$font-family-body: "Inter", "Roboto", "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !default; // UI / body
 
 $font-family-sans-serif: $font-family-body !default;
 $font-family-secondary: $font-family-heading !default;

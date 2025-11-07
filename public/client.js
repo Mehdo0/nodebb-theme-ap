@@ -12,12 +12,12 @@
 	  });
 */
 
-// Load Google Fonts for typography system
+// Load Google Fonts (Inter, Montserrat, Playfair Display)
 (function() {
-	var link = document.createElement('link');
-	link.rel = 'stylesheet';
-	link.href = 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;600;700&family=Lato:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap';
-	document.head.appendChild(link);
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap';
+    document.head.appendChild(link);
 })();
 
 // Note: Icons removed per user request. This theme now uses text-only navigation and brand header.

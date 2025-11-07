@@ -1,4 +1,12 @@
+// Audemars Piguet Inspired Theme
+// Luxury high-horology aesthetic for NodeBB
+
 // override harmony font-path
 $font-path: "./plugins/nodebb-theme-ap";
 
+// Import Harmony base theme
 @import "../nodebb-theme-harmony/theme";
+
+// Import custom AP theme styles (includes overrides)
+@import "scss/overrides";
+@import "scss/custom";

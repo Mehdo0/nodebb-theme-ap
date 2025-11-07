@@ -1,79 +1,163 @@
-// only overrides to bs5 variables here
+// Audemars Piguet Inspired Theme - Luxury Design System
+// Based on high-horology aesthetics: precision, exclusivity, contemporary luxury
 
-// below are the default values from harmony theme overrides.scss file
-// feel free to change these for your custom theme
+// ============================================================================
+// Core Color Palette - Audemars Piguet Inspired
+// ============================================================================
 
-// Harmony colours
-$white:    #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
-$black:    #000 !default;
+// Primary Brand Colors
+$ap-timber-green: #132A24 !default;      // Deep forest green, almost black - main brand color
+$ap-pink-gold: #B7876A !default;         // Metallic Pink Gold / Rose Gold - accents, unread indicators
+$ap-bleu-nuit: #2A3B5A !default;         // Night Blue - secondary accent, visited links
 
-$blue:    #0d6efd !default;
-$red:     #dc3545 !default;
-$yellow:  #ffc107 !default;
-$green:   #198754 !default;
-$cyan:    #0dcaf0 !default;
+// Content & Background Colors
+$white: #FFFFFF !default;
+$off-white: #FAFAFA !default;
+$black: #000000 !default;
 
-$primary:       $blue !default;
-$secondary:     $gray-600 !default;
-$success:       $green !default;
-$info:          $cyan !default;
-$warning:       $yellow !default;
-$danger:        $red !default;
-$light:         $gray-100 !default;
-$dark:          $gray-900 !default;
+// Neutral Grays (refined palette)
+$gray-100: #F5F5F5 !default;
+$gray-200: #E0E0E0 !default;  // Very light borders
+$gray-300: #CCCCCC !default;
+$gray-400: #999999 !default;
+$gray-500: #666666 !default;
+$gray-600: #4A4A4A !default;
+$gray-700: #333333 !default;
+$gray-800: #1A1A1A !default;
+$gray-900: #0A0A0A !default;
 
-$body-color: $gray-800 !default;
-$body-bg: $white !default;
-$body-tertiary-bg: $gray-200 !default;
+// Semantic Colors (keeping for compatibility, but using AP palette)
+$blue: $ap-bleu-nuit !default;
+$red: #C41E3A !default;  // Refined red
+$yellow: #D4AF37 !default;  // Gold tone
+$green: #2D5016 !default;  // Deep green
+$cyan: #5A7A9A !default;  // Muted blue-gray
+
+// Bootstrap Color Mapping
+$primary: $ap-pink-gold !default;
+$secondary: $gray-600 !default;
+$success: $green !default;
+$info: $ap-bleu-nuit !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $off-white !default;
+$dark: $ap-timber-green !default;
+
+// Body & Content
+$body-color: $black !default;
+$body-bg: $off-white !default;
+$body-tertiary-bg: $white !default;
 $text-muted: $gray-600 !default;
 $border-color: $gray-200 !default;
-$link-color: shade-color($blue, 20%) !default;
+$link-color: $ap-bleu-nuit !default;
+$link-hover-color: darken($ap-bleu-nuit, 10%) !default;
 
-$btn-ghost-hover-color: mix($light, $dark, 90%);
-$btn-ghost-active-color: lighten($btn-ghost-hover-color, 5%);
-$btn-ghost-hover-color-dark: mix($dark, $light, 90%);
-$btn-ghost-active-color-dark: lighten($btn-ghost-hover-color-dark, 5%);
+// Button Ghost States
+$btn-ghost-hover-color: rgba($ap-pink-gold, 0.1);
+$btn-ghost-active-color: rgba($ap-pink-gold, 0.15);
+$btn-ghost-hover-color-dark: rgba($white, 0.1);
+$btn-ghost-active-color-dark: rgba($white, 0.15);
 
 :root {
 	--btn-ghost-hover-color: #{$btn-ghost-hover-color};
 	--btn-ghost-active-color: #{$btn-ghost-active-color};
+	--ap-timber-green: #{$ap-timber-green};
+	--ap-pink-gold: #{$ap-pink-gold};
+	--ap-bleu-nuit: #{$ap-bleu-nuit};
 }
+
 [data-bs-theme="dark"] {
 	--btn-ghost-hover-color: #{$btn-ghost-hover-color-dark};
 	--btn-ghost-active-color: #{$btn-ghost-active-color-dark};
 }
 
-// no caret on dropdown-toggle
-$enable-caret: false;
+// ============================================================================
+// Typography - Dual-Font System
+// ============================================================================
 
-// disable smooth scroll, this makes window.scrollTo(0,0) in ajaxify.js take x milliseconds
-$enable-smooth-scroll: false;
+// Google Fonts Import (handled via @import in theme.scss)
+// Logo Font: Elegant serif (custom/Times-like elongated)
+// Headings: Montserrat or Lato (geometric, architectural)
+// Body: Roboto or Open Sans (highly legible, neutral)
 
-$enable-shadows: true;
+$font-family-logo: "Playfair Display", "Times New Roman", Times, serif !default;  // Elegant serif for logo
+$font-family-heading: "Montserrat", "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !default;  // Geometric sans for headings
+$font-family-body: "Roboto", "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !default;  // Legible sans for body
 
-$link-decoration: none;
-$link-hover-decoration: underline;
+$font-family-sans-serif: $font-family-body !default;
+$font-family-secondary: $font-family-heading !default;
 
-// Custom fonts
-$font-family-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$font-family-secondary: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
-$font-weight-semibold: 500 !default;
+// Font Weights
+$font-weight-light: 300 !default;      // Large category titles
+$font-weight-normal: 400 !default;     // Body text
+$font-weight-semibold: 600 !default;   // Thread titles
+$font-weight-bold: 700 !default;       // Emphasis
+
+// Typography Scale
+$font-size-base: 1rem !default;
+$line-height-base: 1.5 !default;  // Generous line spacing for premium feel
 $small-font-size: 0.875rem !default;
 
-$breadcrumb-divider: quote("→");
-$breadcrumb-divider-color: $gray-500 !default;
+$h1-font-size: 2.5rem !default;
+$h2-font-size: 2rem !default;
+$h3-font-size: 1.75rem !default;
+$h4-font-size: 1.5rem !default;
+$h5-font-size: 1.25rem !default;
+$h6-font-size: 1rem !default;
+
+// ============================================================================
+// Luxury UI Elements
+// ============================================================================
+
+// Layout - Spacious & Minimalist
+$spacer: 1.5rem !default;
+$border-radius: 0 !default;  // Sharp, precise corners (no rounded edges)
+$border-width: 1px !default;
+$border-color: $gray-200 !default;
+
+// Buttons - Flat design, sharp corners
+$btn-border-radius: 0 !default;
+$btn-font-weight: $font-weight-semibold !default;
+$btn-padding-x: 2rem !default;
+$btn-padding-y: 0.75rem !default;
+
+// Cards & Content Areas
+$card-border-radius: 0 !default;
+$card-border-width: 1px !default;
+$card-border-color: $gray-200 !default;
+$card-bg: $white !default;
+$card-spacer-x: 2rem !default;
+$card-spacer-y: 1.5rem !default;
+
+// Inputs
+$input-border-radius: 0 !default;
+$input-border-color: $gray-200 !default;
+$input-focus-border-color: $ap-pink-gold !default;
+$input-focus-box-shadow: 0 0 0 0.2rem rgba($ap-pink-gold, 0.1) !default;
+
+// Links
+$link-decoration: none !default;
+$link-hover-decoration: underline !default;
+
+// Breadcrumbs
+$breadcrumb-divider: quote("→") !default;
+$breadcrumb-divider-color: $ap-pink-gold !default;
 $breadcrumb-active-color: $body-color !default;
 $breadcrumb-item-padding-x: 12px !default;
 
+// ============================================================================
+// Component Settings
+// ============================================================================
+
+$enable-caret: false !default;
+$enable-smooth-scroll: false !default;
+$enable-shadows: false !default;  // Minimal shadows for flat design
+
+// Placeholders
 .form-control::placeholder, .bootstrap-tagsinput::placeholder {
-	color: $gray-500 !important;
+	color: $gray-400 !important;
 }
+
+// ============================================================================
+// Tapisserie Pattern (will be added in custom.scss)
+// ============================================================================

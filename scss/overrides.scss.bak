@@ -1,0 +1,288 @@
+// Core variables and overrides for AP Theme// Core variables and overrides for AP Theme// Core variables and overrides for AP Theme
+
+// ============================================================================
+
+// Color Palette// ============================================================================// ============================================================================
+
+// ============================================================================
+
+// Color Palette// Color Palette
+
+// Brand Colors
+
+$ap-timber-green: #00473E !default;  // Dark green for header/footer// ============================================================================// ============================================================================
+
+$ap-pink-gold: #B89A65 !default;     // Gold accent for interactive elements
+
+$ap-bleu-nuit: #2A3B5A !default;     // Night blue for secondary accents
+
+
+
+// Neutral Colors// Brand Colors// Primary Brand Colors
+
+$white: #FFFFFF !default;
+
+$off-white: #F4F4F4 !default;$ap-timber-green: #00473E !default;  // Dark green for header/footer$ap-timber-green: #132A24 !default;      // Deep forest green, almost black - main brand color
+
+$black: #222222 !default;
+
+$ap-pink-gold: #B89A65 !default;     // Gold accent for interactive elements$ap-pink-gold: #B7876A !default;         // Metallic Pink Gold / Rose Gold - accents, unread indicators
+
+// Grays
+
+$gray-100: #F5F5F5 !default;$ap-bleu-nuit: #2A3B5A !default;     // Night blue for secondary accents$ap-bleu-nuit: #2A3B5A !default;         // Night Blue - secondary accent, visited links
+
+$gray-200: #E0E0E0 !default;
+
+$gray-300: #CCCCCC !default;
+
+$gray-400: #999999 !default;
+
+$gray-500: #666666 !default;// Neutral Colors// Content & Background Colors
+
+$gray-600: #4A4A4A !default;
+
+$gray-700: #333333 !default;$white: #FFFFFF !default;$white: #FFFFFF !default;
+
+
+
+// Theme Colors$off-white: #F4F4F4 !default;$off-white: #FAFAFA !default;
+
+$primary: $ap-pink-gold !default;
+
+$secondary: $ap-bleu-nuit !default;$black: #222222 !default;$black: #000000 !default;
+
+$body-bg: $off-white !default;
+
+$body-color: $black !default;
+
+$border-color: $gray-200 !default;
+
+// Grays// Neutral Grays (refined palette)
+
+// Typography
+
+$font-family-logo: "Playfair Display", serif !default;$gray-100: #F5F5F5 !default;$gray-100: #F5F5F5 !default;
+
+$font-family-heading: "Montserrat", sans-serif !default;
+
+$font-family-body: "Inter", sans-serif !default;$gray-200: #E0E0E0 !default;$gray-200: #E0E0E0 !default;  // Very light borders
+
+
+
+// Font Weights$gray-300: #CCCCCC !default;$gray-300: #CCCCCC !default;
+
+$font-weight-light: 300 !default;
+
+$font-weight-normal: 400 !default;$gray-400: #999999 !default;$gray-400: #999999 !default;
+
+$font-weight-semibold: 600 !default;
+
+$font-weight-bold: 700 !default;$gray-500: #666666 !default;$gray-500: #666666 !default;
+
+
+
+// Base sizes$gray-600: #4A4A4A !default;$gray-600: #4A4A4A !default;
+
+$spacer: 1rem !default;
+
+$border-radius: 0 !default;  // Sharp corners$gray-700: #333333 !default;$gray-700: #333333 !default;
+
+
+
+// Mixins$gray-800: #1A1A1A !default;
+
+@mixin tapisserie-pattern {
+
+    position: relative;// Theme Colors$gray-900: #0A0A0A !default;
+
+    
+
+    &::before {$primary: $ap-pink-gold !default;
+
+        content: '';
+
+        position: absolute;$secondary: $ap-bleu-nuit !default;// Semantic Colors (keeping for compatibility, but using AP palette)
+
+        top: 0;
+
+        left: 0;$body-bg: $off-white !default;$blue: $ap-bleu-nuit !default;
+
+        right: 0;
+
+        bottom: 0;$body-color: $black !default;$red: #C41E3A !default;  // Refined red
+
+        background-image: 
+
+            linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),$border-color: $gray-200 !default;$yellow: #D4AF37 !default;  // Gold tone
+
+            linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+
+        background-size: 20px 20px;$green: #2D5016 !default;  // Deep green
+
+        pointer-events: none;
+
+        opacity: 0.3;// Typography$cyan: #5A7A9A !default;  // Muted blue-gray
+
+        z-index: 0;
+
+    }$font-family-logo: "Playfair Display", serif !default;
+
+}
+
+$font-family-heading: "Montserrat", sans-serif !default;// Bootstrap Color Mapping
+
+$font-family-body: "Inter", sans-serif !default;$primary: $ap-pink-gold !default;
+
+$secondary: $gray-600 !default;
+
+// Font Weights$success: $green !default;
+
+$font-weight-light: 300 !default;$info: $ap-bleu-nuit !default;
+
+$font-weight-normal: 400 !default;$warning: $yellow !default;
+
+$font-weight-semibold: 600 !default;$danger: $red !default;
+
+$font-weight-bold: 700 !default;$light: $off-white !default;
+
+$dark: $ap-timber-green !default;
+
+// Base sizes
+
+$spacer: 1rem !default;// Body & Content
+
+$border-radius: 0 !default;  // Sharp corners$body-color: $black !default;
+
+$body-bg: $off-white !default;
+
+// Mixins$body-tertiary-bg: $white !default;
+
+@mixin tapisserie-pattern {$text-muted: $gray-600 !default;
+
+    position: relative;$border-color: $gray-200 !default;
+
+    $link-color: $ap-bleu-nuit !default;
+
+    &::before {$link-hover-color: darken($ap-bleu-nuit, 10%) !default;
+
+        content: '';
+
+        position: absolute;// Button Ghost States
+
+        top: 0;$btn-ghost-hover-color: rgba($ap-pink-gold, 0.1);
+
+        left: 0;$btn-ghost-active-color: rgba($ap-pink-gold, 0.15);
+
+        right: 0;$btn-ghost-hover-color-dark: rgba($white, 0.1);
+
+        bottom: 0;$btn-ghost-active-color-dark: rgba($white, 0.15);
+
+        background-image: 
+
+            linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),:root {
+
+            linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);	--btn-ghost-hover-color: #{$btn-ghost-hover-color};
+
+        background-size: 20px 20px;	--btn-ghost-active-color: #{$btn-ghost-active-color};
+
+        pointer-events: none;	--ap-timber-green: #{$ap-timber-green};
+
+        opacity: 0.3;	--ap-pink-gold: #{$ap-pink-gold};
+
+        z-index: 0;	--ap-bleu-nuit: #{$ap-bleu-nuit};
+
+    }}
+
+}
+[data-bs-theme="dark"] {
+	--btn-ghost-hover-color: #{$btn-ghost-hover-color-dark};
+	--btn-ghost-active-color: #{$btn-ghost-active-color-dark};
+}
+
+// ============================================================================
+// Typography - Dual-Font System (AP x Harmony)
+// ============================================================================
+
+// Google Fonts: Inter for UI, Montserrat for headings, Playfair Display for logo
+$font-family-logo: "Playfair Display", Georgia, "Times New Roman", serif !default;   // Brand / logo
+$font-family-heading: "Montserrat", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !default; // Headings
+$font-family-body: "Inter", "Roboto", "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !default; // UI / body
+
+$font-family-sans-serif: $font-family-body !default;
+$font-family-secondary: $font-family-heading !default;
+
+// Font Weights
+$font-weight-light: 300 !default;      // Large category titles
+$font-weight-normal: 400 !default;     // Body text
+$font-weight-semibold: 600 !default;   // Thread titles
+$font-weight-bold: 700 !default;       // Emphasis
+
+// Typography Scale
+$font-size-base: 1rem !default;
+$line-height-base: 1.5 !default;  // Generous line spacing for premium feel
+$small-font-size: 0.875rem !default;
+
+$h1-font-size: 2.5rem !default;
+$h2-font-size: 2rem !default;
+$h3-font-size: 1.75rem !default;
+$h4-font-size: 1.5rem !default;
+$h5-font-size: 1.25rem !default;
+$h6-font-size: 1rem !default;
+
+// ============================================================================
+// Luxury UI Elements
+// ============================================================================
+
+// Layout - Spacious & Minimalist
+$spacer: 1.5rem !default;
+$border-radius: 0 !default;  // Sharp, precise corners (no rounded edges)
+$border-width: 1px !default;
+$border-color: $gray-200 !default;
+
+// Buttons - Flat design, sharp corners
+$btn-border-radius: 0 !default;
+$btn-font-weight: $font-weight-semibold !default;
+$btn-padding-x: 2rem !default;
+$btn-padding-y: 0.75rem !default;
+
+// Cards & Content Areas
+$card-border-radius: 0 !default;
+$card-border-width: 1px !default;
+$card-border-color: $gray-200 !default;
+$card-bg: $white !default;
+$card-spacer-x: 2rem !default;
+$card-spacer-y: 1.5rem !default;
+
+// Inputs
+$input-border-radius: 0 !default;
+$input-border-color: $gray-200 !default;
+$input-focus-border-color: $ap-pink-gold !default;
+$input-focus-box-shadow: 0 0 0 0.2rem rgba($ap-pink-gold, 0.1) !default;
+
+// Links
+$link-decoration: none !default;
+$link-hover-decoration: underline !default;
+
+// Breadcrumbs
+$breadcrumb-divider: quote("→") !default;
+$breadcrumb-divider-color: $ap-pink-gold !default;
+$breadcrumb-active-color: $body-color !default;
+$breadcrumb-item-padding-x: 12px !default;
+
+// ============================================================================
+// Component Settings
+// ============================================================================
+
+$enable-caret: false !default;
+$enable-smooth-scroll: false !default;
+$enable-shadows: false !default;  // Minimal shadows for flat design
+
+// Placeholders
+.form-control::placeholder, .bootstrap-tagsinput::placeholder {
+	color: $gray-400 !important;
+}
+
+// ============================================================================
+// Tapisserie Pattern (will be added in custom.scss)
+// ============================================================================

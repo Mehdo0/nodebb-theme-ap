@@ -1,0 +1,290 @@
+// AP Forum Header Styles
+// ============================================================================
+
+.ap-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    background-color: $white;
+    box-shadow: 0 2px 4px rgba($black, 0.1);
+}
+
+// Brand Header
+.ap-brand-header {
+    background-color: $ap-timber-green;
+    @include tapisserie-pattern;
+    padding: 0.75rem 0;
+    height: 56px;
+}
+
+.ap-brand-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.ap-logo {
+    height: 32px;
+    
+    img {
+        height: 100%;
+        width: auto;
+        object-fit: contain;
+    }
+}
+
+.ap-brand-text {
+    color: $white;
+    font-family: $font-family-logo;
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+}
+
+// Main Navigation Bar
+.ap-navbar {
+    background-color: $white;
+    border-bottom: 1px solid $border-color;
+    padding: 0.5rem 0;
+}
+
+.ap-navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+// Search
+.ap-search-container {
+    flex: 1;
+    max-width: 600px;
+}
+
+.ap-search-form {
+    position: relative;
+}
+
+.ap-search-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    padding-right: 3rem;
+    border: 2px solid $border-color;
+    border-radius: 0;
+    font-family: $font-family-body;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    
+    &:focus {
+        outline: none;
+        border-color: $ap-pink-gold;
+    }
+}
+
+.ap-search-submit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 3rem;
+    background: none;
+    border: none;
+    color: $gray-600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+    
+    &:hover {
+        color: $ap-pink-gold;
+    }
+}
+
+// Navigation Actions
+.ap-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ap-nav-item {
+    position: relative;
+}
+
+.ap-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: $gray-700;
+    text-decoration: none;
+    font-family: $font-family-heading;
+    font-size: 0.95rem;
+    font-weight: $font-weight-semibold;
+    padding: 0.5rem;
+    transition: color 0.2s ease;
+    
+    &:hover {
+        color: $ap-pink-gold;
+    }
+    
+    img, .ap-user-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    
+    .ap-user-icon {
+        background-color: $ap-pink-gold;
+        color: $white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        font-weight: $font-weight-semibold;
+    }
+}
+
+.ap-notification-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    background-color: $ap-pink-gold;
+    color: $white;
+    font-size: 0.75rem;
+    font-weight: $font-weight-bold;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Sub Navigation
+.ap-subnav {
+    background-color: $white;
+    border-bottom: 1px solid $border-color;
+    padding: 0;
+}
+
+.ap-subnav-list {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 48px;
+}
+
+.ap-subnav-item {
+    height: 100%;
+}
+
+.ap-subnav-link {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 0.5rem;
+    color: $gray-700;
+    text-decoration: none;
+    font-family: $font-family-heading;
+    font-size: 0.9rem;
+    font-weight: $font-weight-semibold;
+    position: relative;
+    transition: color 0.2s ease;
+    
+    &:hover {
+        color: $ap-pink-gold;
+    }
+    
+    &.active {
+        color: $ap-pink-gold;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: $ap-pink-gold;
+        }
+    }
+}
+
+// Dropdowns
+.dropdown-menu {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid $border-color;
+    border-radius: 0;
+    box-shadow: 0 4px 6px rgba($black, 0.1);
+    
+    .dropdown-item {
+        padding: 0.5rem 1rem;
+        font-family: $font-family-body;
+        font-size: 0.95rem;
+        color: $gray-700;
+        
+        i {
+            width: 1.5rem;
+            color: $gray-600;
+        }
+        
+        &:hover {
+            background-color: $gray-100;
+            color: $ap-pink-gold;
+            
+            i {
+                color: $ap-pink-gold;
+            }
+        }
+    }
+    
+    .dropdown-divider {
+        margin: 0.5rem 0;
+        border-color: $border-color;
+    }
+}
+
+// Responsive
+@media (max-width: 992px) {
+    .ap-nav-link span {
+        display: none;
+    }
+    
+    .ap-search-container {
+        max-width: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .ap-brand-text {
+        display: none;
+    }
+    
+    .ap-subnav-list {
+        gap: 1rem;
+    }
+    
+    .ap-subnav-link {
+        font-size: 0.85rem;
+    }
+}
+
+// Main content padding for fixed header
+body {
+    padding-top: calc(56px + 60px + 48px); // Brand header + navbar + subnav
+}

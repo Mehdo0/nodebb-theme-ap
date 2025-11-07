@@ -367,21 +367,21 @@ a {
 	top: 0;
 	left: 0;
 	right: 0;
-	height: 80px; /* larger, more presence */
+	height: 56px; /* smaller header */
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	z-index: 1050;
 	background-color: $ap-timber-green; /* keep header dark green */
 	@include tapisserie-pattern; /* subtle pattern on header too */
-	backdrop-filter: blur(6px);
-	-webkit-backdrop-filter: blur(6px);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
 	font-family: $font-family-heading; /* cleaner, more readable */
-	font-size: 2rem; /* bigger */
+	font-size: 1.25rem; /* smaller */
 	font-weight: $font-weight-semibold;
-	letter-spacing: 0.02em; /* tighter for better readability */
-	color: $ap-bleu-nuit; /* darker, more legible */
-	text-transform: none; /* keep natural capitalization: "AP Club" */
+	letter-spacing: 0.02em;
+	color: $ap-bleu-nuit;
+	text-transform: none;
 }
 
 /* Inner wrapper to hold emblem + text */
@@ -389,13 +389,13 @@ a {
 .ap-brand-inner {
 	display: inline-flex;
 	align-items: center;
-	gap: 12px;
+	gap: 10px;
 	/* translucent white rounded block with gold border behind emblem + text */
 	background: rgba(255, 255, 255, 0.92);
-	border-radius: 40px;
-	padding: 8px 18px;
+	border-radius: 28px;
+	padding: 6px 14px;
 	border: 2px solid $ap-pink-gold; /* gold surrounding */
-	box-shadow: 0 6px 18px rgba($gray-900, 0.12);
+	box-shadow: 0 4px 12px rgba($gray-900, 0.08);
 }
 
 /* Emblem circle - replace the textual pseudo emblem with a visual AP emblem block */
@@ -419,7 +419,7 @@ a {
 	display: inline-block;
 	width: auto;
 	height: auto;
-	max-height: 56px;
+	max-height: 44px; /* slightly smaller to fit reduced header */
 	object-fit: contain;
 }
 
@@ -452,21 +452,47 @@ body {
 }
 
 /* Move the main navigation bar to the bottom of the viewport only on small screens */
-@media (max-width: 768px) {
-	.navbar {
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		z-index: 1040;
-		border-radius: 0;
-		box-shadow: 0 -1px 6px rgba($gray-800, 0.06);
-	}
+.navbar {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1040;
+	border-radius: 0;
+	box-shadow: 0 -1px 6px rgba($gray-800, 0.06);
+}
 
-	/* Prevent content from being hidden underneath the bottom navbar on small screens */
-	body {
-		padding-bottom: 72px;
-	}
+/* Prevent content from being hidden underneath the bottom navbar */
+body {
+	padding-bottom: 72px;
+}
+
+/* Minimalist icon-only navbar styling */
+.navbar .nav-link {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 8px 12px;
+	font-size: 0; /* hide textual labels while keeping icons readable */
+	color: $gray-700;
+}
+
+.navbar .nav-link i, .navbar .nav-link svg, .navbar .nav-link .fa {
+	font-size: 1.25rem;
+	font-size: 20px;
+	color: $gray-700;
+}
+
+/* ensure hover state highlights the icon */
+.navbar .nav-link:hover i, .navbar .nav-link:hover svg, .navbar .nav-link:hover .fa {
+	color: $ap-pink-gold;
+}
+
+/* hide the built-in brand text (NodeBB) that appears after our custom header */
+.ap-brand-header + .navbar .navbar-brand,
+.ap-brand-header ~ .navbar .navbar-brand {
+	display: none !important;
 }
 
 // ============================================================================

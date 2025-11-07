@@ -1,0 +1,7 @@
+{
+    "id": "nodebb-theme-ap",
+    "name": "AP Theme",
+    "description": "Custom NodeBB theme for AP",
+    "url": "https://github.com/mehdi/nodebb-theme-ap",
+    "baseTheme": "nodebb-theme-harmony"
+}

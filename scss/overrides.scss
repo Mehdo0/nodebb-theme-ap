@@ -1,3 +1,10 @@
+// Audemars Piguet theme overrides and tokens
+// Import Google fonts and the AP variables partial. The partial centralizes
+// color, typography and spacing tokens for the AP skin.
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600&display=swap");
+@import 'ap_variables';
+
 // only overrides to bs5 variables here
 
 // below are the default values from harmony theme overrides.scss file

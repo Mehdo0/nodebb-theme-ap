@@ -1,0 +1,44 @@
+// AP (Audemars Piguet) theme variables
+// Centralized color, typography and spacing tokens for the AP skin
+
+// Core colors
+$ap-dark-green:    #00473E !default; // primary/dark header
+$ap-light-gray:    #f4f4f4 !default; // main background
+$ap-dark-text:     #222222 !default; // primary text
+$ap-gold:          #B89A65 !default; // accent
+
+// Map to common theme/bootstrap tokens
+$body-bg: $ap-light-gray !default;
+$body-color: $ap-dark-text !default;
+$primary: $ap-dark-green !default;
+$dark: #2a2a2a !default;
+$link-color: $ap-gold !default;
+$border-color: mix($ap-dark-text, $ap-light-gray, 92%) !default;
+$body-tertiary-bg: lighten($ap-light-gray, 2%) !default;
+
+// Buttons
+$btn-primary-bg: $ap-dark-green !default;
+$btn-primary-color: $ap-light-gray !default;
+
+// Typography
+$font-family-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", Arial, sans-serif !default;
+$font-family-heading: "Playfair Display", Georgia, serif !default;
+
+// CSS custom properties for runtime use in templates or JS
+:root {
+  --ap-accent: #{$ap-gold};
+  --ap-dark-green: #{$ap-dark-green};
+  --ap-bg: #{$ap-light-gray};
+  --ap-text: #{$ap-dark-text};
+}
+
+// Small-scale spacing tokens (adjust later if needed)
+$ap-gap-xs: 6px !default;
+$ap-gap-sm: 12px !default;
+$ap-gap-md: 20px !default;
+$ap-gap-lg: 32px !default;
+
+// Utility: subtle muted text color
+$ap-muted: mix($ap-dark-text, $ap-light-gray, 65%) !default;
+
+// End of _ap_variables.scss

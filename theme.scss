@@ -10,4 +10,5 @@ $font-path: "./plugins/nodebb-theme-ap";
 // Import custom AP theme styles (includes overrides)
 @import "scss/overrides";
 @import "scss/custom";
-@import "scss/profile-menu";
+@import "scss/_profile-menu";
+@import "scss/_nft-collection.scss";

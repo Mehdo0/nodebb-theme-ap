@@ -1,8 +1,19 @@
 {
     "id": "nodebb-theme-ap",
     "name": "AP Theme",
-    "description": "A sophisticated and luxurious UI theme for NodeBB, inspired by Audemars Piguet's artistic direction. Features a refined color palette with Timber Green, Pink Gold accents, and Bleu Nuit secondary colors. Typography system combines elegant serif fonts for branding with geometric sans-serif for headings and highly legible sans-serif for body text. Includes subtle Tapisserie pattern textures, sharp geometric design elements, and a minimalist spacious layout.",
-    "url": "https://github.com/Mehdo0/nodebb-theme-ap",
+    "description": "theme pour le hackathon de l'AP",
     "baseTheme": "nodebb-theme-harmony",
-    "screenshot": "screenshot.png"
+    "screenshot": "screenshot.png",
+    "author": {
+        "name": "Mehdi",
+        "email": "mehdi@example.com",
+        "url": "https://github.com/Mehdo0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Mehdo0/nodebb-theme-ap"
+    },
+    "bugs": {
+        "url": "https://github.com/Mehdo0/nodebb-theme-ap/issues"
+    }
 }

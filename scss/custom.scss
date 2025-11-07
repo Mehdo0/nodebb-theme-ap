@@ -361,28 +361,55 @@ a {
 }
 
 // Top fixed brand header (Club AP)
+
 .ap-brand-header {
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
-	height: 64px;
+	height: 80px; /* larger, more presence */
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	z-index: 1050;
-	background: linear-gradient(90deg, rgba($ap-pink-gold, 0.06), rgba($ap-bleu-nuit, 0.03));
-	backdrop-filter: blur(4px);
-	font-family: $font-family-logo;
-	font-size: 1.6rem;
-	letter-spacing: 0.08em;
-	color: $ap-pink-gold;
-	text-transform: uppercase;
+	background: linear-gradient(90deg, rgba($ap-pink-gold, 0.04), rgba($ap-bleu-nuit, 0.02));
+	backdrop-filter: blur(6px);
+	-webkit-backdrop-filter: blur(6px);
+	font-family: $font-family-heading; /* cleaner, more readable */
+	font-size: 2rem; /* bigger */
+	font-weight: $font-weight-semibold;
+	letter-spacing: 0.02em; /* tighter for better readability */
+	color: $ap-bleu-nuit; /* darker, more legible */
+	text-transform: none; /* keep natural capitalization: "AP Club" */
+}
+
+/* Inner wrapper to hold emblem + text */
+.ap-brand-inner {
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+}
+
+/* Small emblem circle with initials; adds a premium mark */
+.ap-brand-inner::before {
+	content: "AP";
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	background: linear-gradient(135deg, $ap-pink-gold, $ap-bleu-nuit);
+	color: $white;
+	font-family: $font-family-heading;
+	font-weight: $font-weight-bold;
+	font-size: 0.9rem;
+	box-shadow: 0 2px 8px rgba($gray-900, 0.12);
 }
 
 /* make sure content is not hidden under the fixed brand header */
 body {
-	padding-top: 64px;
+	padding-top: 80px;
 }
 
 /* Move the main navigation bar to the bottom of the viewport */

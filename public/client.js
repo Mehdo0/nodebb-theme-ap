@@ -45,7 +45,7 @@ $(document).ready(function () {
 		// Structured markup: emblem (visual AP logo) + the word "Club"
 		var header = '<div class="ap-brand-header" role="banner" aria-label="AP Club">'
 			+ '<div class="ap-brand-inner">'
-			+ '<img class="ap-logo" src="/assets/themes/nodebb-theme-ap/ap-logo.png" alt="AP logo" />'
+			+ '<img class="ap-logo" src="/assets/themes/nodebb-theme-ap/Audemars_Piguet_logo.png" alt="AP logo" />'
 			+ '<span class="ap-brand-text">Club</span>'
 			+ '</div>'
 			+ '</div>';

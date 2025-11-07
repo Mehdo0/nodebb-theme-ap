@@ -358,7 +358,7 @@ a {
 	top: 0 !important; /* force the header to start at y = 0 */
 	left: 0;
 	right: 0;
-	height: 100px; /* reduced header height */
+	height: 0px; /* reduced header height */
 	display: flex;
 	align-items: center;
 	justify-content: center;

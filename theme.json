@@ -1,19 +1,7 @@
 {
-    "id": "nodebb-theme-ap",
-    "name": "AP Theme",
-    "description": "theme pour le hackathon de l'AP",
-    "baseTheme": "nodebb-theme-harmony",
-    "screenshot": "screenshot.png",
-    "author": {
-        "name": "Mehdi",
-        "email": "mehdi@example.com",
-        "url": "https://github.com/Mehdo0"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Mehdo0/nodebb-theme-ap"
-    },
-    "bugs": {
-        "url": "https://github.com/Mehdo0/nodebb-theme-ap/issues"
-    }
+    "id": "nodebb-theme-quickstart",
+    "name": "My Theme Name",
+    "description": "Enter a description here",
+    "url": "https://github.com/nodebb/nodebb-theme-quickstart",
+    "baseTheme": "nodebb-theme-harmony"
 }

@@ -1,4 +1,4 @@
-# AP Theme for NodeBB
+# Quickstart Theme for NodeBB
 
 This repository contains all of the preparatory work for a theme based off of the [Harmony theme](https://github.com/NodeBB/nodebb-theme-harmony). If you'd like to base your theme off another supported theme instead, switch to the appropriate branch:
 
@@ -8,9 +8,10 @@ Fork it to create your own theme based off of it!
 
 ### Some things to change
 
-* Update metadata in `package.json`, `plugin.json`, and `theme.json` (author, repository, description) to match your project details.
-* Replace the placeholder description in the admin navigation (`lib/theme.js`) with wording that makes sense for your community.
-* Swap the Harmony assets with your own styling in `scss/` and `public/`.
+* You should rename this theme from `quickstart` to something else. Change all instances of that word in the following files:
+    * `package.json`
+    * `plugin.json`
+    * `theme.json`
 
 ### When you're done...
 

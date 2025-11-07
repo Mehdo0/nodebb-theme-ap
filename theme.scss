@@ -1,14 +1,4 @@
-// Audemars Piguet Inspired Theme
-// Luxury high-horology aesthetic for NodeBB
+// override harmony font-path
+$font-path: "./plugins/nodebb-theme-quickstart";
 
-// Import Google Fonts
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap');
-
-// Import Harmony base theme
 @import "../nodebb-theme-harmony/theme";
-
-// Import custom AP theme styles
-@import "scss/overrides";
-@import "scss/_header";
-@import "scss/_layout";
-@import "scss/_categories";

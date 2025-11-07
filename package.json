@@ -1,7 +1,7 @@
 {
-    "name": "nodebb-theme-ap",
+    "name": "nodebb-theme-quickstart",
     "version": "0.1.0",
-    "description": "Custom NodeBB theme for AP",
+    "description": "Enter a description here",
     "main": "lib/theme.js",
     "keywords": [],
     "license": "MIT",

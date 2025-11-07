@@ -372,7 +372,8 @@ a {
 	align-items: center;
 	justify-content: center;
 	z-index: 1050;
-	background: linear-gradient(90deg, rgba($ap-pink-gold, 0.04), rgba($ap-bleu-nuit, 0.02));
+	background-color: $ap-timber-green; /* keep header dark green */
+	@include tapisserie-pattern; /* subtle pattern on header too */
 	backdrop-filter: blur(6px);
 	-webkit-backdrop-filter: blur(6px);
 	font-family: $font-family-heading; /* cleaner, more readable */
@@ -389,8 +390,8 @@ a {
 	display: inline-flex;
 	align-items: center;
 	gap: 12px;
-	/* white rounded block with gold border behind emblem + text */
-	background: $white;
+	/* translucent white rounded block with gold border behind emblem + text */
+	background: rgba(255, 255, 255, 0.92);
 	border-radius: 40px;
 	padding: 8px 18px;
 	border: 2px solid $ap-pink-gold; /* gold surrounding */
@@ -399,22 +400,23 @@ a {
 
 /* Emblem circle - replace the textual pseudo emblem with a visual AP emblem block */
 .ap-logo {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
+	display: inline-block;
 	width: 56px;
 	height: 56px;
 	border-radius: 50%;
-	background: linear-gradient(135deg, $ap-pink-gold, $ap-bleu-nuit);
-	color: $white;
-	font-family: $font-family-logo;
-	font-weight: $font-weight-bold;
-	font-size: 1rem;
+	overflow: hidden;
+	flex: 0 0 56px;
 	box-shadow: 0 2px 8px rgba($gray-900, 0.12);
+	background-color: transparent;
 }
 
-.ap-logo::before {
-	content: "AP"; /* fallback textual emblem if no image is provided */
+.ap-logo img,
+.ap-logo[src],
+.ap-logo[alt] {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	display: block;
 }
 
 .ap-brand-text {
@@ -429,20 +431,22 @@ body {
 	padding-top: 80px;
 }
 
-/* Move the main navigation bar to the bottom of the viewport */
-.navbar {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	z-index: 1040;
-	border-radius: 0;
-	box-shadow: 0 -1px 6px rgba($gray-800, 0.06);
-}
+/* Move the main navigation bar to the bottom of the viewport only on small screens */
+@media (max-width: 768px) {
+	.navbar {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 1040;
+		border-radius: 0;
+		box-shadow: 0 -1px 6px rgba($gray-800, 0.06);
+	}
 
-/* Prevent content from being hidden underneath the bottom navbar */
-body {
-	padding-bottom: 72px;
+	/* Prevent content from being hidden underneath the bottom navbar on small screens */
+	body {
+		padding-bottom: 72px;
+	}
 }
 
 // ============================================================================

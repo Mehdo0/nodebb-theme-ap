@@ -358,15 +358,15 @@ a {
 	top: 0 !important; /* force the header to start at y = 0 */
 	left: 0;
 	right: 0;
-	height: 44px; /* reduced header height */
+	height: 100px; /* reduced header height */
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	z-index: 9999; /* high so it sits above other fixed elements */
 	background-color: $ap-timber-green; /* keep header dark green */
 	@include tapisserie-pattern; /* subtle pattern on header too */
-	backdrop-filter: blur(4px);
-	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
 	font-family: $font-family-heading; /* cleaner, more readable */
 	font-size: 1rem; /* slightly smaller text to fit */
 	font-weight: $font-weight-semibold;

@@ -347,18 +347,9 @@ a {
 }
 
 // ============================================================================
-// Icons - Thin-line, Geometric
+// Icons removed
 // ============================================================================
-
-.icon,
-[class^="icon-"] {
-	font-weight: 300;
-}
-
-// Do not force a thin font-weight on Font Awesome classes; preserve icon rendering
-.fa, .fas, .far, .fab {
-	font-weight: normal !important;
-}
+// The theme no longer injects or forces iconography. Navigation uses text labels.
 
 // Top fixed brand header (Club AP)
 
@@ -480,32 +471,17 @@ body {
 	padding-bottom: 72px;
 }
 
-/* Minimalist icon-only navbar styling */
+/* Standard text-based navbar styling (labels visible) */
 .navbar .nav-link {
 	display: inline-flex;
-	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	padding: 8px 12px;
-	font-size: 0; /* hide textual labels while keeping icons readable */
+	font-size: 0.95rem; /* keep readable labels */
 	color: $gray-700;
 }
 
-.navbar .nav-link i,
-.navbar .nav-link .fa {
-	font-size: 20px;
-	color: $gray-700;
-}
-
-.navbar .nav-link svg {
-	width: 20px;
-	height: 20px;
-	display: block;
-	color: $gray-700; /* used by svg when stroke="currentColor" */
-}
-
-/* ensure hover state highlights the icon */
-.navbar .nav-link:hover i, .navbar .nav-link:hover svg, .navbar .nav-link:hover .fa {
+.navbar .nav-link:hover {
 	color: $ap-pink-gold;
 }
 

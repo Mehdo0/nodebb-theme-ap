@@ -1,22 +1,22 @@
-// Force-hide the right sidebar and expand main content
+// Force-hide the bottom sidebar and expand main content
 // This targets common NodeBB/harmony sidebar structures and makes the
 // main content take full width. Uses !important to override compiled rules.
 
-/* Hide typical aside/right sidebar containers */
+/* Hide typical aside/bottom sidebar containers */
 .container > aside:last-child,
 .row > aside:last-child,
 aside.sidebar,
-aside.col-sidebar,
-aside.col-right,
+aside.col-bottombar,
+aside.col-bottom,
 aside#sidebar,
-/* Harmony / NodeBB common right-side components */
-.right-sidebar,
-.sidebar-right,
-.col-right,
-.col-sidebar-right,
+/* Harmony / NodeBB common bottom-side components */
+.bottom-sidebar,
+.sidebar-bottom,
+.col-bottom,
+.col-sidebar-bottom,
 .userpanel,
 .profile-sidebar,
-.pull-right {
+.pull-bottom {
   display: none !important;
 }
 
@@ -36,20 +36,20 @@ aside#sidebar,
 }
 
 /* Remove vertical dividers that separate sidebars */
-/* Also hide floating/bottom UI elements that live on the right */
+/* Also hide floating/bottom UI elements that live on the bottom */
 [component="bottombar"],
 .bottombar,
 .bottom-bar,
 .bottombar,
 .page-bottom,
-.right-floating,
-.fixed-right,
-.toolbar-right {
+.bottom-floating,
+.fixed-bottom,
+.toolbar-bottom {
   display: none !important;
 }
 ._sidebar-sep,
 .sidebar-sep,
-.divider-right {
+.divider-bottom {
   display: none !important;
 }
 
@@ -58,7 +58,7 @@ aside#sidebar,
   grid-template-columns: 1fr !important;
 }
 
-/* If NodeBB adds right padding for sidebars, remove it so content can use full width */
+/* If NodeBB adds bottom padding for sidebars, remove it so content can use full width */
 body, .content, #content, .main, .ap-main {
-  padding-right: 0 !important;
+  padding-bottom: 0 !important;
 }

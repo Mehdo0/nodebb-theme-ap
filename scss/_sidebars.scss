@@ -3,28 +3,10 @@
 // and provide a CSS-only solution (non-invasive) to disable the right
 // widget sidebar and convert the left navigation to a bottom bar.
 
-// 1) Hide right widget sidebar containers (Harmony/widget-area)
-[data-widget-area="sidebar"],
-.page .col-sidebar-right,
-.col-sidebar-right,
-aside.sidebar-right,
-aside.col-sidebar,
-aside.right-sidebar,
-.widget-area.sidebar,
-#sidebar, /* defensive */
-.side-column,
-.home-sidebar,
-.sidebar {
-  display: none !important;
-}
-
-// 2) Expand main content to use full width
-/* Target likely main content containers used by Harmony */
-main, .ap-main, .page, .content, #content, .col-main, .col-content, .main {
-  width: 100% !important;
-  max-width: 100% !important;
-  flex: 1 1 100% !important;
-}
+// Right sidebar removal is handled at template level by
+// `templates/partials/sidebar.tpl` which is intentionally empty.
+// Avoid broad CSS selectors here to reduce the risk of hiding
+// unrelated elements across pages.
 
 // 3) Transform left navigation into a bottom-fixed bar
 // The left navigation in Harmony uses a few possible selectors; we target
@@ -112,7 +94,6 @@ nav[component="navigation"],
 }
 
 // 4) Hide redundant header-navigation elements (if present)
-.header-navigation,
 .navbar-left,
 .navbar-side {
   display: none !important;

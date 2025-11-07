@@ -351,9 +351,54 @@ a {
 // ============================================================================
 
 .icon,
-.fa,
 [class^="icon-"] {
 	font-weight: 300;
+}
+
+// Do not force a thin font-weight on Font Awesome classes; preserve icon rendering
+.fa, .fas, .far, .fab {
+	font-weight: normal !important;
+}
+
+// Top fixed brand header (Club AP)
+.ap-brand-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 64px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1050;
+	background: linear-gradient(90deg, rgba($ap-pink-gold, 0.06), rgba($ap-bleu-nuit, 0.03));
+	backdrop-filter: blur(4px);
+	font-family: $font-family-logo;
+	font-size: 1.6rem;
+	letter-spacing: 0.08em;
+	color: $ap-pink-gold;
+	text-transform: uppercase;
+}
+
+/* make sure content is not hidden under the fixed brand header */
+body {
+	padding-top: 64px;
+}
+
+/* Move the main navigation bar to the bottom of the viewport */
+.navbar {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1040;
+	border-radius: 0;
+	box-shadow: 0 -1px 6px rgba($gray-800, 0.06);
+}
+
+/* Prevent content from being hidden underneath the bottom navbar */
+body {
+	padding-bottom: 72px;
 }
 
 // ============================================================================

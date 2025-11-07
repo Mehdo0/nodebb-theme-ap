@@ -20,6 +20,16 @@
 	document.head.appendChild(link);
 })();
 
+// Ensure Font Awesome is available for icons (fallback to a stable v4 build for compatibility)
+(function() {
+	var fa = document.createElement('link');
+	fa.rel = 'stylesheet';
+	fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
+	fa.integrity = 'sha512-SfZ6C+f6Qb7m5q2hQm5kz6Q0s8E2v3J+F6G3z3Qjv3l2Yk5p7Q==';
+	fa.crossOrigin = 'anonymous';
+	document.head.appendChild(fa);
+})();
+
 $(document).ready(function () {
 	// Add octagonal avatar class option (if needed for dynamic switching)
 	// $('.avatar').addClass('avatar-octagon'); // Uncomment to enable octagonal avatars
@@ -27,5 +37,19 @@ $(document).ready(function () {
 	// Enhance luxury feel with subtle animations
 	$('.btn').on('mouseenter', function() {
 		$(this).css('transition', 'all 0.2s ease');
+	});
+
+	// Insert a simple, stylish brand header at the very top
+	function ensureBrandHeader() {
+		if ($('.ap-brand-header').length) { return; }
+		var header = '<div class="ap-brand-header" role="banner" aria-label="Club AP"><div class="ap-brand-inner">Club AP</div></div>';
+		$('body').prepend(header);
+	}
+
+	ensureBrandHeader();
+
+	// Re-insert on ajaxify page changes (NodeBB single-page navigation)
+	$(window).on('action:ajaxify.end', function () {
+		ensureBrandHeader();
 	});
 });

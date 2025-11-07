@@ -102,6 +102,8 @@ body {
 .category-item {
 	background-color: $white;
 	border-radius: $border-radius;
+	/* Ensure text inside light content areas is readable on white backgrounds */
+	color: $black;
 }
 
 // Spacing
@@ -358,7 +360,7 @@ a {
 	top: 0 !important; /* force the header to start at y = 0 */
 	left: 0;
 	right: 0;
-	height: 10px; /* reduced header height */
+	height: 40px; /* reduced header height */
 	display: flex;
 	align-items: center;
 	justify-content: center;

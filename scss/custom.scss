@@ -355,20 +355,20 @@ a {
 
 .ap-brand-header {
 	position: fixed;
-	top: 0;
+	top: 0 !important; /* force the header to start at y = 0 */
 	left: 0;
 	right: 0;
-	height: 56px; /* smaller header */
+	height: 44px; /* reduced header height */
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	z-index: 1050;
+	z-index: 9999; /* high so it sits above other fixed elements */
 	background-color: $ap-timber-green; /* keep header dark green */
 	@include tapisserie-pattern; /* subtle pattern on header too */
 	backdrop-filter: blur(4px);
 	-webkit-backdrop-filter: blur(4px);
 	font-family: $font-family-heading; /* cleaner, more readable */
-	font-size: 1.25rem; /* smaller */
+	font-size: 1rem; /* slightly smaller text to fit */
 	font-weight: $font-weight-semibold;
 	letter-spacing: 0.02em;
 	color: $ap-bleu-nuit;
@@ -380,13 +380,14 @@ a {
 .ap-brand-inner {
 	display: inline-flex;
 	align-items: center;
-	gap: 10px;
+	gap: 8px;
 	/* translucent white rounded block with gold border behind emblem + text */
 	background: rgba(255, 255, 255, 0.92);
-	border-radius: 28px;
-	padding: 6px 14px;
+	border-radius: 24px;
+	padding: 4px 10px;
 	border: 2px solid $ap-pink-gold; /* gold surrounding */
-	box-shadow: 0 4px 12px rgba($gray-900, 0.08);
+	box-shadow: 0 4px 10px rgba($gray-900, 0.08);
+	height: 36px; /* ensure inner fits the reduced header */
 }
 
 /* Emblem circle - replace the textual pseudo emblem with a visual AP emblem block */
@@ -395,7 +396,7 @@ a {
 	display: inline-block;
 	width: auto;
 	height: auto;
-	max-height: 56px; /* constrain height so it fits the header nicely */
+	max-height: 36px; /* constrain height to fit the reduced header */
 	border-radius: 0; /* do not crop or round the image */
 	overflow: visible;
 	flex: 0 0 auto;
@@ -410,7 +411,7 @@ a {
 	display: inline-block;
 	width: auto;
 	height: auto;
-	max-height: 44px; /* slightly smaller to fit reduced header */
+	max-height: 32px; /* slightly smaller to fit reduced header */
 	object-fit: contain;
 }
 
@@ -451,8 +452,11 @@ a {
 }
 
 /* make sure content is not hidden under the fixed brand header */
+/* Ensure the page content is not hidden under the fixed brand header.
+   Keep padding slightly larger than header to allow the inner block to sit comfortably. */
 body {
-	padding-top: 80px;
+	margin: 0; /* ensure no default browser margin pushes things down */
+	padding-top: 64px;
 }
 
 /* Move the main navigation bar to the bottom of the viewport only on small screens */

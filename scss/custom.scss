@@ -360,7 +360,7 @@ a {
 	top: 0 !important; /* force the header to start at y = 0 */
 	left: 0;
 	right: 0;
-	height: 40px; /* reduced header height */
+	height: 56px; /* increased header height to accommodate larger inner block */
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -370,7 +370,7 @@ a {
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
 	font-family: $font-family-heading; /* cleaner, more readable */
-	font-size: 1rem; /* slightly smaller text to fit */
+	font-size: 1.25rem; /* match logo size */
 	font-weight: $font-weight-semibold;
 	letter-spacing: 0.02em;
 	color: $ap-bleu-nuit;
@@ -382,29 +382,14 @@ a {
 .ap-brand-inner {
 	display: inline-flex;
 	align-items: center;
-	gap: 8px;
+	gap: 12px; /* increased spacing between emblem and text */
 	/* translucent white rounded block with gold border behind emblem + text */
 	background: rgba(255, 255, 255, 0.92);
 	border-radius: 24px;
-	padding: 4px 10px;
+	padding: 8px 20px; /* increased padding for bigger block */
 	border: 2px solid $ap-pink-gold; /* gold surrounding */
 	box-shadow: 0 4px 10px rgba($gray-900, 0.08);
-	height: 36px; /* ensure inner fits the reduced header */
-}
-
-/* Emblem circle - replace the textual pseudo emblem with a visual AP emblem block */
-.ap-logo {
-	/* Show the provided logo image as-is (no circular crop or forced sizing) */
-	display: inline-block;
-	width: auto;
-	height: auto;
-	max-height: 36px; /* constrain height to fit the reduced header */
-	border-radius: 0; /* do not crop or round the image */
-	overflow: visible;
-	flex: 0 0 auto;
-	box-shadow: none; /* keep logo untouched */
-	background: transparent;
-	vertical-align: middle;
+	height: 44px; /* increased height for bigger block */
 }
 
 .ap-logo[alt],
@@ -412,8 +397,7 @@ a {
 .ap-logo img {
 	display: inline-block;
 	width: auto;
-	height: auto;
-	max-height: 32px; /* slightly smaller to fit reduced header */
+	height: 1.25rem; /* match text size exactly */
 	object-fit: contain;
 }
 
@@ -461,29 +445,25 @@ body {
 	padding-top: 64px;
 }
 
-/* Move the main navigation bar to the bottom of the viewport only on small screens */
+/* Navigation styling - No bottom fixed bar */
 .navbar {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	z-index: 1040;
-	border-radius: 0;
-	box-shadow: 0 -1px 6px rgba($gray-800, 0.06);
+	position: static;
+	background: transparent;
+	border: none;
+	box-shadow: none;
 }
 
-/* Prevent content from being hidden underneath the bottom navbar */
+/* Remove bottom padding since navbar is no longer fixed */
 body {
-	padding-bottom: 72px;
+	padding-bottom: 0;
 }
 
-/* Standard text-based navbar styling (labels visible) */
+/* Standard text-based navbar styling */
 .navbar .nav-link {
 	display: inline-flex;
 	align-items: center;
-	justify-content: center;
 	padding: 8px 12px;
-	font-size: 0.95rem; /* keep readable labels */
+	font-size: 0.95rem;
 	color: $gray-700;
 }
 

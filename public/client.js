@@ -42,8 +42,13 @@ $(document).ready(function () {
 	// Insert a simple, stylish brand header at the very top
 	function ensureBrandHeader() {
 		if ($('.ap-brand-header').length) { return; }
-		// Updated to "AP Club" and structured inner markup for styling/emblem
-		var header = '<div class="ap-brand-header" role="banner" aria-label="AP Club"><div class="ap-brand-inner">AP Club</div></div>';
+		// Structured markup: emblem (visual AP logo) + the word "Club"
+		var header = '<div class="ap-brand-header" role="banner" aria-label="AP Club">'
+			+ '<div class="ap-brand-inner">'
+			+ '<span class="ap-logo" aria-hidden="true"></span>'
+			+ '<span class="ap-brand-text">Club</span>'
+			+ '</div>'
+			+ '</div>';
 		$('body').prepend(header);
 	}
 

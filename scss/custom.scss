@@ -384,27 +384,44 @@ a {
 }
 
 /* Inner wrapper to hold emblem + text */
+
 .ap-brand-inner {
 	display: inline-flex;
 	align-items: center;
 	gap: 12px;
+	/* white rounded block with gold border behind emblem + text */
+	background: $white;
+	border-radius: 40px;
+	padding: 8px 18px;
+	border: 2px solid $ap-pink-gold; /* gold surrounding */
+	box-shadow: 0 6px 18px rgba($gray-900, 0.12);
 }
 
-/* Small emblem circle with initials; adds a premium mark */
-.ap-brand-inner::before {
-	content: "AP";
+/* Emblem circle - replace the textual pseudo emblem with a visual AP emblem block */
+.ap-logo {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	width: 48px;
-	height: 48px;
+	width: 56px;
+	height: 56px;
 	border-radius: 50%;
 	background: linear-gradient(135deg, $ap-pink-gold, $ap-bleu-nuit);
 	color: $white;
-	font-family: $font-family-heading;
+	font-family: $font-family-logo;
 	font-weight: $font-weight-bold;
-	font-size: 0.9rem;
+	font-size: 1rem;
 	box-shadow: 0 2px 8px rgba($gray-900, 0.12);
+}
+
+.ap-logo::before {
+	content: "AP"; /* fallback textual emblem if no image is provided */
+}
+
+.ap-brand-text {
+	font-family: $font-family-heading; /* clean, readable */
+	font-size: 1.25rem;
+	font-weight: $font-weight-semibold;
+	color: $ap-timber-green; /* dark green text on white block for legibility */
 }
 
 /* make sure content is not hidden under the fixed brand header */

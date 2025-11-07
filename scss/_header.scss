@@ -1,18 +1,20 @@
 // Header styles for AP theme
-.ap-header {
+.brand-container {
   background: $ap-dark-green;
   color: $ap-light-gray;
-  border-bottom: 1px solid rgba($ap-dark-text, 0.06);
+  
+  .col-12 {
+    border-bottom-color: rgba($ap-dark-text, 0.06) !important;
+  }
 
-  .ap-header-inner {
+  [component="brand/wrapper"] {
     padding: 10px 0;
   }
 
-  .ap-brand {
+  [component="brand/anchor"],
+  [component="siteTitle"] {
     text-decoration: none;
     color: $ap-light-gray;
-    align-items: center;
-    display: inline-flex;
   }
 
   .ap-logo-img {

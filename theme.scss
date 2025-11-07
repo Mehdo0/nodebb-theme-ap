@@ -1,4 +1,15 @@
 // override harmony font-path
-$font-path: "./plugins/nodebb-theme-quickstart";
+$font-path: "./plugins/nodebb-theme-ap";
 
+// Import AP variables first
+@import "./scss/ap_variables";
+
+// Import parent theme
 @import "../nodebb-theme-harmony/theme";
+
+// Import AP custom styles
+@import "./scss/header";
+@import "./scss/layout";
+@import "./scss/categories";
+@import "./scss/sidebars";
+@import "./scss/overrides";

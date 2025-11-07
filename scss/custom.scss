@@ -491,10 +491,17 @@ body {
 	color: $gray-700;
 }
 
-.navbar .nav-link i, .navbar .nav-link svg, .navbar .nav-link .fa {
-	font-size: 1.25rem;
+.navbar .nav-link i,
+.navbar .nav-link .fa {
 	font-size: 20px;
 	color: $gray-700;
+}
+
+.navbar .nav-link svg {
+	width: 20px;
+	height: 20px;
+	display: block;
+	color: $gray-700; /* used by svg when stroke="currentColor" */
 }
 
 /* ensure hover state highlights the icon */

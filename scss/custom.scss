@@ -430,6 +430,22 @@ a {
 	color: $ap-timber-green; /* dark green text on white block for legibility */
 }
 
+/* Fallback emblem when the image is not available */
+.ap-logo-fallback {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 56px;
+	height: 56px;
+	border-radius: 8px;
+	background: linear-gradient(135deg, $ap-pink-gold, $ap-bleu-nuit);
+	color: $white;
+	font-family: $font-family-logo;
+	font-weight: $font-weight-bold;
+	font-size: 1rem;
+	box-shadow: 0 2px 8px rgba($gray-900, 0.12);
+}
+
 /* make sure content is not hidden under the fixed brand header */
 body {
 	padding-top: 80px;

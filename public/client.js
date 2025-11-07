@@ -42,14 +42,28 @@ $(document).ready(function () {
 	// Insert a simple, stylish brand header at the very top
 	function ensureBrandHeader() {
 		if ($('.ap-brand-header').length) { return; }
-		// Structured markup: emblem (visual AP logo) + the word "Club"
-		var header = '<div class="ap-brand-header" role="banner" aria-label="AP Club">'
-			+ '<div class="ap-brand-inner">'
-			+ '<img class="ap-logo" src="/assets/themes/nodebb-theme-ap/Audemars_Piguet_logo.png" alt="AP logo" />'
-			+ '<span class="ap-brand-text">Club</span>'
-			+ '</div>'
-			+ '</div>';
-		$('body').prepend(header);
+
+		// Build elements so we can attach an onerror fallback if the image is missing
+		var $header = $('<div>', { class: 'ap-brand-header', role: 'banner', 'aria-label': 'AP Club' });
+		var $inner = $('<div>', { class: 'ap-brand-inner' });
+
+		var $img = $('<img>', {
+			class: 'ap-logo',
+			src: '/assets/themes/nodebb-theme-ap/Audemars_Piguet_logo.png',
+			alt: 'AP logo'
+		});
+
+		// If the image fails to load, replace it with a textual fallback emblem
+		$img.on('error', function () {
+			var $fallback = $('<span>', { class: 'ap-logo-fallback', text: 'AP' });
+			$(this).replaceWith($fallback);
+		});
+
+		var $text = $('<span>', { class: 'ap-brand-text', text: 'Club' });
+
+		$inner.append($img).append($text);
+		$header.append($inner);
+		$('body').prepend($header);
 	}
 
 	ensureBrandHeader();

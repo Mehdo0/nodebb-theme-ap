@@ -3,56 +3,35 @@
   background: $ap-dark-green;
   color: $ap-light-gray;
   border-bottom: 1px solid rgba($ap-dark-text, 0.06);
+
   .ap-header-inner {
-    padding: 8px 0;
+    padding: 10px 0;
   }
 
-  .ap-logo img { height: 36px; display: block; }
-  .ap-site-title {
-    font-family: $font-family-heading;
-    font-size: 1.05rem;
+  .ap-brand {
+    text-decoration: none;
     color: $ap-light-gray;
-    font-weight: 600;
-  }
-
-  .ap-search {
-    flex: 1 1 auto;
-    max-width: 720px;
-    margin: 0 16px;
     align-items: center;
-
-    .ap-search-input {
-      border-radius: 999px;
-      padding: 8px 14px;
-      border: none;
-      background: rgba(255,255,255,0.06);
-      color: $ap-light-gray;
-      width: 100%;
-    }
-    .ap-search-btn {
-      margin-left: 8px;
-      color: $ap-gold;
-      background: transparent;
-      border: none;
-    }
+    display: inline-flex;
   }
 
-  .ap-actions {
-    flex: 0 0 auto;
-    gap: $ap-gap-sm;
-
-    .ap-action { color: $ap-light-gray; margin-right: 8px; position: relative; }
-    .ap-badge { position: absolute; top: -6px; right: -6px; background: $ap-gold; color: $ap-dark-text; border-radius: 999px; padding: 2px 6px; font-size: 0.7rem; }
-
-    .ap-user { color: $ap-light-gray; display: flex; align-items: center; gap: 8px; text-decoration: none; }
-    .ap-avatar-initials { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.08); display: inline-flex; align-items: center; justify-content: center; font-weight:600; }
-    .ap-username { color: $ap-light-gray; }
+  .ap-logo-img {
+    height: 54px;
+    width: auto;
+    display: block;
   }
 
-  // Responsive tweaks
+  .ap-club {
+    margin-left: $ap-gap-sm;
+    color: $ap-light-gray;
+    font-family: $font-family-sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.02em;
+  }
+
   @media (max-width: 767px) {
-    .ap-search { display: none; }
-    .ap-username { display: none; }
-    .ap-header-inner { gap: 8px; }
+    .ap-logo-img { height: 40px; }
+    .ap-club { display: none; }
   }
 }

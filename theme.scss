@@ -1,23 +1,14 @@
-// Audemars Piguet Inspired Theme// Audemars Piguet Inspired Theme
+// Audemars Piguet Inspired Theme
+// Luxury high-horology aesthetic for NodeBB
 
-// Luxury high-horology aesthetic for NodeBB// Luxury high-horology aesthetic for NodeBB
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap');
 
+// Import Harmony base theme
+@import "../nodebb-theme-harmony/theme";
 
-
-// Import Google Fonts// Import Google Fonts
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap');@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap');
-
-
-
-// Import Harmony base theme// Import Harmony base theme
-
-@import "../nodebb-theme-harmony/theme";@import "../nodebb-theme-harmony/theme";
-
-
-
-// Import custom AP theme styles// Import custom AP theme styles
-
-@import "scss/overrides";@import "scss/overrides";
-
-@import "scss/_header";@import "scss/_header";
+// Import custom AP theme styles
+@import "scss/overrides";
+@import "scss/_header";
+@import "scss/_layout";
+@import "scss/_categories";

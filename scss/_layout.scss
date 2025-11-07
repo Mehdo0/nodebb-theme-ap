@@ -1,0 +1,200 @@
+// Main Layout Styles
+// ============================================================================
+
+.ap-layout {
+    display: flex;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+
+    // Main content area
+    &-main {
+        flex: 1;
+        min-width: 0; // Prevent flex child from overflowing
+        background: $white;
+        border: 1px solid $border-color;
+    }
+
+    // Sidebar
+    &-sidebar {
+        width: 300px;
+        flex-shrink: 0;
+
+        @media (max-width: 992px) {
+            display: none;
+        }
+    }
+}
+
+// Content Sections
+.ap-section {
+    padding: 1.5rem;
+    border-bottom: 1px solid $border-color;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    // Section header
+    &-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+
+        h2 {
+            font-family: $font-family-heading;
+            font-size: 1.25rem;
+            font-weight: $font-weight-bold;
+            color: $ap-timber-green;
+            margin: 0;
+        }
+    }
+
+    // Section content
+    &-content {
+        position: relative;
+    }
+}
+
+// Sidebar Widgets
+.ap-widget {
+    background: $white;
+    border: 1px solid $border-color;
+    margin-bottom: 1.5rem;
+
+    &-header {
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid $border-color;
+        background-color: $off-white;
+
+        h3 {
+            font-family: $font-family-heading;
+            font-size: 1rem;
+            font-weight: $font-weight-bold;
+            color: $ap-timber-green;
+            margin: 0;
+        }
+    }
+
+    &-content {
+        padding: 1.5rem;
+    }
+
+    // Apply tapisserie pattern to featured widgets
+    &-featured {
+        position: relative;
+        background-color: $ap-timber-green;
+        color: $white;
+        @include tapisserie-pattern;
+
+        .ap-widget-header {
+            background: transparent;
+            border-bottom: 1px solid rgba($white, 0.1);
+
+            h3 {
+                color: $white;
+            }
+        }
+
+        .ap-widget-content {
+            position: relative;
+            z-index: 1;
+        }
+    }
+}
+
+// Responsive layout adjustments
+@media (max-width: 992px) {
+    .ap-layout {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .ap-section {
+        padding: 1rem;
+    }
+}
+
+// Thread list styles
+.ap-thread-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    &-item {
+        padding: 1rem 0;
+        border-bottom: 1px solid $border-color;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        &-title {
+            font-family: $font-family-heading;
+            font-size: 1.1rem;
+            font-weight: $font-weight-semibold;
+            color: $ap-timber-green;
+            text-decoration: none;
+            margin: 0;
+
+            &:hover {
+                color: $ap-pink-gold;
+            }
+        }
+
+        &-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: $gray-500;
+            font-size: 0.9rem;
+
+            a {
+                color: inherit;
+                text-decoration: none;
+
+                &:hover {
+                    color: $ap-pink-gold;
+                }
+            }
+        }
+    }
+}
+
+// Breadcrumb navigation
+.ap-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    background-color: $off-white;
+    border-bottom: 1px solid $border-color;
+
+    a {
+        color: $gray-600;
+        text-decoration: none;
+        font-size: 0.9rem;
+
+        &:hover {
+            color: $ap-pink-gold;
+        }
+    }
+
+    .separator {
+        color: $gray-400;
+    }
+
+    .current {
+        color: $ap-timber-green;
+        font-weight: $font-weight-semibold;
+    }
+}

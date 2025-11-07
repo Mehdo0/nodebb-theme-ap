@@ -1,0 +1,40 @@
+// Force-hide the right sidebar and expand main content
+// This targets common NodeBB/harmony sidebar structures and makes the
+// main content take full width. Uses !important to override compiled rules.
+
+/* Hide typical aside/right sidebar containers */
+.container > aside:last-child,
+.row > aside:last-child,
+aside.sidebar,
+aside.col-sidebar,
+aside.col-right,
+aside#sidebar {
+  display: none !important;
+}
+
+/* Expand main content columns to full width */
+.container .row > .col,
+.container .row > [class*="col-"],
+.container .row > main,
+.ap-main,
+.main,
+.content,
+#content,
+.col-main,
+.col-content {
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 1 1 100% !important;
+}
+
+/* Remove vertical dividers that separate sidebars */
+._sidebar-sep,
+.sidebar-sep,
+.divider-right {
+  display: none !important;
+}
+
+/* If the theme uses a two-column grid we added earlier, ensure it collapses */
+.ap-container {
+  grid-template-columns: 1fr !important;
+}

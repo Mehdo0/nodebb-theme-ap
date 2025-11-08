@@ -1,8 +1,7 @@
 {
-  "id": "nodebb-theme-ap",
-  "name": "AP Theme",
-  "description": "My custom theme for NodeBB",
-  "screenshot": "screenshot.png",
-  "templates": "templates",
-  "staticDir": "static"
+    "id": "nodebb-theme-AP",
+    "name": "AP",
+    "description": "The default theme for NodeBB. Uses a standard approach to forum design.",
+    "url": "https://github.com/Mehdo0/nodebb-theme-ap",
+    "screenshot": "screenshot.png"
 }

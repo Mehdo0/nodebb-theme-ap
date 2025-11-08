@@ -2,12 +2,12 @@
 // AP Theme Layout Structure
 // =============================================
 
-// Body layout - full height, flex column
+// Body layout
 body.ap-theme {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding-bottom: 74px !important; // Space for bottom navigation
+  padding-bottom: 80px !important; // Space for bottom navigation
   overflow-x: hidden;
 }
 
@@ -16,18 +16,14 @@ body.ap-theme {
   flex: 1 0 auto;
   width: 100%;
   max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
 }
 
-// Content wrapper - centers content with max width
+// Content wrapper
 .ap-content-wrapper {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: $ap-gap-lg $ap-gap-md;
-  flex: 1 0 auto;
+  padding: 20px;
 }
 
 // AP Header styles
@@ -39,43 +35,12 @@ body.ap-theme {
   .ap-header-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 $ap-gap-md;
+    padding: 0 20px;
   }
   
   .ap-logo-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-}
-
-// Widget areas
-.widget-area {
-  width: 100%;
-  margin-bottom: $ap-gap-md;
-
-  &:empty {
-    display: none;
-  }
-}
-
-// Responsive adjustments
-@media (max-width: 768px) {
-  body.ap-theme {
-    padding-bottom: 80px !important;
-  }
-
-  .ap-content-wrapper {
-    padding: $ap-gap-md $ap-gap-sm;
-  }
-}
-
-@media (max-width: 480px) {
-  body.ap-theme {
-    padding-bottom: 70px !important;
-  }
-
-  .ap-content-wrapper {
-    padding: $ap-gap-sm;
   }
 }

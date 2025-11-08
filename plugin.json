@@ -8,19 +8,19 @@
 		{ "hook": "filter:settings.get", "method": "getAdminSettings"},
 		{ "hook": "filter:user.saveSettings", "method": "saveUserSettings" },
 		{ "hook": "filter:user.profileMenu", "method": "addProfileItem" },
-		{ "hook": "filter:middleware.renderHeader", "method": "filterMiddlewareRenderHeader" }
+		{ "hook": "filter:middleware.renderHeader", "method": "filterMiddlewareRenderHeader" },
+		{ "hook": "filter:scripts.get", "method": "addScripts" }
 	],
 	"scripts": [
-		"public/client.js",
-		"../nodebb-theme-harmony/public/harmony.js"
+		"public/client.js"
 	],
-	"templates": "templates",
-	"modules": {
-		"../admin/plugins/ap.js": "../nodebb-theme-harmony/public/admin.js",
-		"../client/account/theme.js": "../nodebb-theme-harmony/public/settings.js"
-	},
+	"templates": "./templates",
 	"staticDirs": {
 		"inter": "node_modules/@fontsource/inter/files",
 		"poppins": "node_modules/@fontsource/poppins/files"
+	},
+	"modules": {
+		"../admin/plugins/ap.js": "../nodebb-theme-harmony/public/admin.js",
+		"../client/account/theme.js": "../nodebb-theme-harmony/public/settings.js"
 	}
 }

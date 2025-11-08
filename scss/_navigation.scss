@@ -1,17 +1,17 @@
 // =============================================
 // AP Theme: Bottom Navigation Bar
-// Pure NodeBB Navigation styled as bottom bar
+// For JavaScript-created navigation
 // =============================================
 
-// Target the navigation container
-nav.ap-bottom-navigation,
-[component="sidebar/left"].ap-bottom-navigation {
+// Target our JavaScript-created navigation
+nav.ap-bottom-navigation.ap-bottom-navigation-js {
   // Position at bottom
   position: fixed !important;
   bottom: 0 !important;
   left: 0 !important;
   right: 0 !important;
   top: auto !important;
+  z-index: 1030 !important;
   
   // Dimensions
   width: 100% !important;
@@ -30,13 +30,8 @@ nav.ap-bottom-navigation,
   // Remove default styles
   padding: 0 !important;
   margin: 0 !important;
-  transform: none !important;
-  
-  z-index: 1030 !important;
 
   // Navigation list
-  #main-nav,
-  .nav,
   ul {
     // Horizontal layout
     display: flex !important;
@@ -51,14 +46,12 @@ nav.ap-bottom-navigation,
     
     // Reset
     margin: 0 !important;
-    padding: 0 $ap-gap-xs !important;
+    padding: 0 10px !important;
     list-style: none !important;
-    gap: 0 !important;
   }
 
   // Navigation items
-  .nav-item,
-  li {
+  .nav-item {
     flex: 1 1 auto !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -69,8 +62,7 @@ nav.ap-bottom-navigation,
   }
 
   // Navigation links
-  .nav-link,
-  a {
+  .nav-link {
     // Layout
     display: flex !important;
     flex-direction: column !important;
@@ -81,21 +73,20 @@ nav.ap-bottom-navigation,
     // Sizing
     width: 100% !important;
     height: 54px !important;
-    padding: $ap-gap-xs !important;
+    padding: 8px !important;
     
     // Styling
     color: $ap-light-gray !important;
     background: transparent !important;
     border: none !important;
-    border-radius: $border-radius-sm !important;
+    border-radius: 4px !important;
     text-decoration: none !important;
     
     // Transitions
     transition: all 0.2s ease !important;
     
     // Icons
-    i,
-    .fa {
+    i {
       font-size: 1.35rem !important;
       color: $ap-light-gray !important;
       margin: 0 !important;
@@ -103,8 +94,7 @@ nav.ap-bottom-navigation,
     }
 
     // Text labels
-    .nav-text,
-    span {
+    .nav-text {
       font-size: 0.65rem !important;
       font-weight: 500 !important;
       color: $ap-light-gray !important;
@@ -118,35 +108,30 @@ nav.ap-bottom-navigation,
     // Hover state
     &:hover {
       color: $ap-gold !important;
-      background: rgba($white, 0.08) !important;
+      background: rgba(255, 255, 255, 0.08) !important;
       transform: translateY(-3px) !important;
 
-      i,
-      .fa {
+      i {
         color: $ap-gold !important;
         transform: scale(1.15) !important;
       }
 
-      .nav-text,
-      span {
+      .nav-text {
         color: $ap-gold !important;
       }
     }
 
     // Active state
-    &.active,
-    &[aria-current="page"] {
+    &.active {
       color: $ap-gold !important;
-      background: rgba($white, 0.12) !important;
+      background: rgba(255, 255, 255, 0.12) !important;
       position: relative !important;
 
-      i,
-      .fa {
+      i {
         color: $ap-gold !important;
       }
 
-      .nav-text,
-      span {
+      .nav-text {
         color: $ap-gold !important;
         font-weight: 600 !important;
       }
@@ -165,71 +150,48 @@ nav.ap-bottom-navigation,
       }
     }
   }
-
-  // Hide tooltips on bottom nav (they interfere)
-  .tooltip {
-    display: none !important;
-  }
 }
 
-// Hide the default sidebars
+// Hide default sidebars and mobile bars
+.sidebar-left,
 .sidebar-right,
-[component="sidebar/right"] {
-  display: none !important;
-}
-
-// Hide original sidebar-left when NOT bottom nav
-.sidebar,
-.sidebar-left:not(.ap-bottom-navigation),
-[component="sidebar/left"]:not(.ap-bottom-navigation) {
-  display: none !important;
-}
-
-// Hide mobile bottom bar
+[component="sidebar/left"],
+[component="sidebar/right"],
 [component="bottomBar"],
 .bottomBar {
   display: none !important;
 }
 
-// Responsive - mobile
+// Responsive adjustments
 @media (max-width: 768px) {
-  nav.ap-bottom-navigation,
-  [component="sidebar/left"].ap-bottom-navigation {
+  nav.ap-bottom-navigation.ap-bottom-navigation-js {
     height: 70px !important;
 
-    .nav-link,
-    a {
+    .nav-link {
       height: 60px !important;
 
-      i,
-      .fa {
+      i {
         font-size: 1.5rem !important;
       }
 
-      .nav-text,
-      span {
+      .nav-text {
         font-size: 0.6rem !important;
       }
     }
   }
 }
 
-// Responsive - very small screens (hide text, icons only)
 @media (max-width: 480px) {
-  nav.ap-bottom-navigation,
-  [component="sidebar/left"].ap-bottom-navigation {
-    .nav-text,
-    span {
+  nav.ap-bottom-navigation.ap-bottom-navigation-js {
+    .nav-text {
       display: none !important;
     }
 
-    .nav-link,
-    a {
+    .nav-link {
       height: 60px !important;
       gap: 0 !important;
 
-      i,
-      .fa {
+      i {
         font-size: 1.75rem !important;
       }
     }

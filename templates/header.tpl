@@ -31,6 +31,8 @@
 				<!-- IMPORT partials/header/brand.tpl -->
 			</div>
 		</div>
+		<!-- IMPORT templates/test-navigation.tpl -->
+		<!-- IMPORT templates/test-build.tpl -->
 	</header>
 
 	<!-- Main Content -->

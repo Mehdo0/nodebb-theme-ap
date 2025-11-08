@@ -3,12 +3,15 @@
   "name": "NodeBB Audemars Piguet Theme",
   "description": "A custom theme for the AP forum",
   "url": "https-github.com-Mehdo0-nodebb-theme-ap",
-  "screenshot": "screenshot.png",
-  "templates": "public/templates",
-  "less": [
-    "public/less/ap.less",
-    "public/less/style.less",
-    "public/less/ap-nav.less"
+  "templates": "/templates",
+  "css": [
+    "_ap_variables.scss",
+    "_header.scss",
+    "_navigation.scss",
+    "overrides.scss",
+    "_categories.scss",
+    "_layout.scss",
+    "_sidebars.scss"
   ],
   "scripts": [
     "public/lib/ap.js"
@@ -19,9 +22,8 @@
   },
   "languages": "public/languages",
   "sounds": [],
-  "css": [],
   "settings": [],
-  "vars": "public/less/variables.less",
+  "vars": "scss/_ap_variables.scss",
   "helpers": [],
   "staticDirs": {
     "public/fonts": "public/fonts"
@@ -206,7 +208,7 @@
     {
       "name": "Popular Page Chat Area",
       "template": "popular.tpl",
-      "location": "popularPageChat"
+      "location":"popularPageChat"
     }
   ],
   "defaultLang": "en-GB",

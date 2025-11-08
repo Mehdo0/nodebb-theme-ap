@@ -118,7 +118,17 @@ body, .page, .content, .ap-main, main, #content {
   body, .page, .content { padding-bottom: 72px !important; }
 }
 
+
 // 7) Defensive: ensure no leftover sidebar separators show
 .sidebar-sep, ._sidebar-sep, .divider-bottom { display: none !important; }
+
+// 8) Hide notification badges on navigation icons
+[component="navigation"] .nav .nav-link .unread-count,
+.nav-pills .nav-link .unread-count,
+.sidebar-left .nav-link .unread-count {
+  display: none !important;
+}
+
+
 
 

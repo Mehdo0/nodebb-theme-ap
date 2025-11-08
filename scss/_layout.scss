@@ -1,4 +1,4 @@
-// Layout utilities for AP theme: single column layout
+// Layout utilities for AP theme: bottom navigation layout
 
 .ap-container {
   display: block;
@@ -9,4 +9,74 @@
   min-width: 0; // prevents overflow in flex/grid children
   max-width: 100%;
   width: 100%;
+}
+
+// Move sidebar navigation to bottom on desktop
+.sidebar.sidebar-left {
+  position: fixed !important;
+  bottom: 0 !important;
+  top: auto !important;
+  left: 0 !important;
+  height: auto !important;
+  width: 100% !important;
+  border-top: 1px solid $border-color !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  z-index: 1000;
+  
+  #main-nav {
+    flex-direction: row !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    margin: 0 !important;
+    padding: 0.5rem 1rem !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    
+    .nav-item {
+      margin: 0 !important;
+      
+      .nav-link {
+        flex-direction: column !important;
+        padding: 0.5rem 1rem !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+        
+        .nav-text {
+          font-size: 0.75rem !important;
+        }
+      }
+    }
+  }
+  
+  .sidebar-toggle-container {
+    display: none !important;
+  }
+}
+
+// Adjust main panel to account for bottom nav
+.layout-container {
+  padding-bottom: 80px !important; // space for bottom nav
+}
+
+#panel {
+  margin-bottom: 0 !important;
+}
+
+// Ensure brand header is always visible
+.brand-container {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+// Mobile adjustments
+@media (max-width: 991px) {
+  .sidebar.sidebar-left {
+    display: none !important;
+  }
+  
+  .layout-container {
+    padding-bottom: 60px !important;
+  }
 }

@@ -2,13 +2,16 @@
 .brand-container {
   background: $ap-dark-green;
   color: $ap-light-gray;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
   
   .col-12 {
     border-bottom-color: rgba($ap-dark-text, 0.06) !important;
   }
 
   [component="brand/wrapper"] {
-    padding: 10px 0;
+    padding: 1rem 0;
   }
 
   [component="brand/anchor"],
@@ -34,6 +37,6 @@
 
   @media (max-width: 767px) {
     .ap-logo-img { height: 40px; }
-    .ap-club { display: none; }
+    .ap-club { font-size: 0.9rem; }
   }
 }

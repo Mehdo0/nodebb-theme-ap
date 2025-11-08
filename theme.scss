@@ -10,6 +10,7 @@ $font-path: "./plugins/nodebb-theme-ap";
 // Import AP custom styles
 @import "./scss/header";
 @import "./scss/layout";
+@import "./scss/navigation";
 @import "./scss/categories";
 @import "./scss/sidebars";
 @import "./scss/overrides";

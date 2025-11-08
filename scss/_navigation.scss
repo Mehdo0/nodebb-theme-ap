@@ -1,0 +1,44 @@
+// Bottom navigation styles for AP theme
+
+// Desktop bottom navigation
+@media (min-width: 992px) {
+  .sidebar.sidebar-left {
+    .nav-item {
+      .nav-link {
+        min-width: 60px;
+        
+        i {
+          font-size: 1.25rem;
+          margin-bottom: 0.25rem;
+        }
+        
+        // Hide text in collapsed state, show icon
+        .visible-closed {
+          display: block !important;
+        }
+        
+        .visible-open {
+          display: block !important;
+        }
+      }
+      
+      &:hover {
+        .nav-link {
+          background-color: rgba($ap-dark-green, 0.1);
+          border-radius: 0.375rem;
+        }
+      }
+    }
+  }
+}
+
+// Ensure mobile bottom bar stays at bottom
+.bottombar {
+  background: $ap-light-gray !important;
+  border-top: 1px solid $border-color !important;
+  padding: 0.5rem !important;
+  
+  .bottombar-nav {
+    background: $ap-light-gray !important;
+  }
+}

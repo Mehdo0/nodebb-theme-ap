@@ -1,27 +1,21 @@
 'use strict';
 
-// AP Theme: Bottom Navigation
 $(document).ready(function () {
-    // Function to handle active states
-    function updateActiveStates() {
-        const currentPath = window.location.pathname;
-        const navLinks = document.querySelectorAll('.ap-bottom-navigation .nav-link');
-        
-        navLinks.forEach(link => {
-            const href = link.getAttribute('href');
-            if (href && (currentPath === href || currentPath.startsWith(href))) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
+    console.log('AP Theme: Bottom navigation enabled');
+    
+    // Function to ensure bottom nav is visible
+    function ensureBottomNavVisible() {
+        const bottomNav = document.querySelector('.ap-bottom-navigation');
+        if (bottomNav) {
+            bottomNav.style.display = 'flex';
+        }
     }
     
-    // Initial update
-    updateActiveStates();
+    // Initial check
+    ensureBottomNavVisible();
     
-    // Update on navigation (NodeBB AJAX)
+    // Check on page changes
     $(window).on('action:ajaxify.end', function() {
-        setTimeout(updateActiveStates, 100);
+        setTimeout(ensureBottomNavVisible, 100);
     });
 });

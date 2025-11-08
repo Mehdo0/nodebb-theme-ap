@@ -1,69 +1,128 @@
-// Bottom navigation styles for AP theme
+/* ===============================
+   AP THEME — Bottom Navigation
+   =============================== */
 
-// Desktop bottom navigation
-@media (min-width: 992px) {
-  .sidebar.sidebar-left {
-    .nav-item {
-      .nav-link {
-        min-width: 60px;
-        transition: all 0.3s ease; // Smooth animation
-        
-        i {
-          font-size: 1.25rem;
-          margin-bottom: 0.25rem;
-          transition: transform 0.3s ease; // Icon animation
-        }
-        
-        // Hide text in collapsed state, show icon
-        .visible-closed {
-          display: block !important;
-        }
-        
-        .visible-open {
-          display: block !important;
-        }
-      }
-      
-      &:hover {
-        .nav-link {
-          background-color: rgba($ap-light-gray, 0.1);
-          border-radius: 0.375rem;
-          transform: translateY(-2px); // Lift effect on hover
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); // Shadow on hover
-          
-          i {
-            transform: scale(1.1); // Slightly enlarge icon
-          }
-        }
-      }
-      
-      // Active state
-      &.active {
-        .nav-link {
-          background-color: rgba($ap-dark-green, 0.15);
-          border-radius: 0.375rem;
-        }
-      }
-    }
-  }
+/* ===== Variables de couleur par défaut ===== */
+$ap-dark-green: #1e3a34;
+$ap-light-gray: #f8f9fa;
+$ap-gold: #d4af37;
+$border-color: rgba(0, 0, 0, 0.1);
+
+/* ===== Structure générale ===== */
+
+/* Cible la navigation principale */
+[component="navigation"],
+nav[component="navigation"],
+.sidebar-left,
+.left-sidebar,
+.col-sidebar-left,
+#left-nav {
+  position: fixed !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  top: auto !important;
+  width: 100% !important;
+  z-index: 9999 !important;
+  background: $ap-dark-green !important;
+  border-top: 1px solid $border-color !important;
+  display: flex !important;
+  justify-content: space-around !important;
+  align-items: center !important;
+  padding: 0.25rem 0 !important;
+  min-height: 56px !important;
 }
 
-// Ensure mobile bottom bar stays at bottom
-.bottombar {
-  background: $ap-light-gray !important;
-  border-top: 1px solid $border-color !important;
-  padding: 0.5rem !important;
-  
-  .bottombar-nav {
-    background: $ap-light-gray !important;
-    
-    .nav-link {
-      transition: all 0.3s ease; // Smooth animation for mobile too
-      
-      &:hover {
-        background-color: rgba($ap-dark-green, 0.1);
-        border-radius: 0.375rem;
-      }
-    }
+/* Liste horizontale */
+[component="navigation"] .nav,
+.nav-pills,
+.nav-stacked,
+.sidebar-left ul,
+.left-sidebar ul,
+.col-sidebar-left ul,
+#left-nav ul {
+  display: flex !important;
+  flex-direction: row !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+/* Items de navigation */
+[component="navigation"] .nav .nav-item,
+.nav-pills .nav-item,
+.sidebar-left .nav-item,
+.left-sidebar .nav-item {
+  flex: 1 1 auto !important;
+  text-align: center !important;
+  margin: 0 !important;
+}
+
+/* Liens de navigation */
+[component="navigation"] .nav .nav-link,
+.nav-pills .nav-link,
+.sidebar-left .nav-link,
+.left-sidebar .nav-link {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: $ap-light-gray !important;
+  opacity: 0.9 !important;
+  padding: 6px 8px !important;
+  font-size: 0.85rem !important;
+  border-radius: 0 !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Icônes */
+[component="navigation"] .nav .nav-link i,
+.nav-pills .nav-link i,
+.sidebar-left .nav-link i {
+  font-size: 1.2rem !important;
+  margin-bottom: 4px !important;
+}
+
+/* Effet au survol */
+[component="navigation"] .nav .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  transform: translateY(-2px);
+  opacity: 1 !important;
+}
+
+/* Actif */
+[component="navigation"] .nav .nav-link.active {
+  color: $ap-gold !important;
+  opacity: 1 !important;
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Cacher les badges inutiles */
+[component="navigation"] .nav .nav-link .unread-count,
+.nav-pills .nav-link .unread-count {
+  display: none !important;
+}
+
+/* Masquer les séparateurs ou header-nav redondants */
+.navbar-left,
+.navbar-side,
+.sidebar-sep,
+.divider-bottom {
+  display: none !important;
+}
+
+/* Empêche le contenu d'être masqué par la barre */
+body, .page, .content, main, #content {
+  padding-bottom: 64px !important;
+}
+
+/* Responsive : petits écrans */
+@media (max-width: 480px) {
+  [component="navigation"] .nav .nav-link {
+    font-size: 0.75rem !important;
+    padding: 4px 2px !important;
   }
+  body, .page, .content { padding-bottom: 72px !important; }
 }

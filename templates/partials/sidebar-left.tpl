@@ -1,5 +1,5 @@
 <!-- AP Theme: Navigation using NodeBB's data -->
-<nav component="navigation" class="nav-pills nav-stacked ap-navigation">
+<nav component="navigation" class="nav-pills nav-stacked">
 	<ul class="ap-nav-list">
 		{{{each navigation}}}
 		<li class="nav-item{{{ if navigation.active }}} active{{{ end }}}" data-id="{navigation.id}">

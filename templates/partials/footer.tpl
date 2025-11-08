@@ -7,12 +7,12 @@
 				</div> <!-- Close row -->
 			</div> <!-- Close container-fluid -->
 		</main>
-		
-		<!-- Bottom Navigation - We'll transform the sidebar to here via CSS -->
-		<div class="ap-bottom-navigation-container">
-			<!-- The actual navigation will be moved here via CSS positioning -->
-		</div>
 	</div> <!-- Close layout-container -->
+
+	<!-- Bottom Navigation - Static and always visible -->
+	<div class="ap-bottom-navigation-static">
+		<!-- IMPORT partials/sidebar-left.tpl -->
+	</div>
 
 	<!-- IMPORT partials/footer-js.tpl -->
 </body>

@@ -1,35 +1,30 @@
 // =============================================
-// AP Theme: Bottom Navigation Bar
-// Now targeting the actual sidebar-left container
+// AP Theme: Static Bottom Navigation Bar
+// Always visible, doesn't depend on AJAX
 // =============================================
 
-// Hide the original sidebar position but keep content
-.sidebar-left {
+// Static bottom navigation container
+.ap-bottom-navigation-static {
   position: fixed !important;
   bottom: 0 !important;
   left: 0 !important;
   right: 0 !important;
-  top: auto !important;
   z-index: 1030 !important;
   
   // Dimensions
   width: 100% !important;
   height: 64px !important;
   
-  // Reset default sidebar styles
-  background: transparent !important;
-  border: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
+  // Styling
+  background: $ap-dark-green !important;
+  border-top: 2px solid $ap-gold !important;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15) !important;
   
-  // The actual navigation inside
+  // The navigation inside
   .ap-navigation,
   [component="navigation"] {
     width: 100% !important;
     height: 100% !important;
-    background: $ap-dark-green !important;
-    border-top: 2px solid $ap-gold !important;
-    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15) !important;
     
     // Layout
     display: flex !important;
@@ -54,22 +49,8 @@
       margin: 0 !important;
       padding: 0 $ap-gap-xs !important;
       list-style: none !important;
-      
-      // Remove stacked styles
-      &.nav-stacked {
-        flex-direction: row !important;
-        
-        > li {
-          float: none !important;
-          width: auto !important;
-          margin: 0 !important;
-        }
-      }
     }
 
-    // Rest of your navigation styles remain the same...
-    // [Keep all your existing .nav-item, .nav-link styles here]
-    
     // Navigation items
     .nav-item,
     li {
@@ -143,7 +124,7 @@
         }
       }
 
-      // Active state
+      // Active state - this will be handled by NodeBB's active class
       &.active {
         color: $ap-gold !important;
         background: rgba($white, 0.12) !important;
@@ -185,11 +166,53 @@
   }
 }
 
+// Hide the original sidebar navigation completely
+.sidebar-left:not(.ap-bottom-navigation-static .sidebar-left) {
+  display: none !important;
+}
+
 // Hide the mobile bottom bar since we're using our own
 [component="bottomBar"],
 .bottomBar {
   display: none !important;
 }
 
-// Responsive styles remain the same...
-// [Keep your existing responsive styles]
+// Responsive - mobile
+@media (max-width: 768px) {
+  .ap-bottom-navigation-static {
+    height: 70px !important;
+
+    .nav-link,
+    a {
+      height: 60px !important;
+
+      i {
+        font-size: 1.5rem !important;
+      }
+
+      span {
+        font-size: 0.6rem !important;
+      }
+    }
+  }
+}
+
+// Responsive - very small screens (hide text, icons only)
+@media (max-width: 480px) {
+  .ap-bottom-navigation-static {
+    .nav-link span,
+    a span {
+      display: none !important;
+    }
+
+    .nav-link,
+    a {
+      height: 60px !important;
+      gap: 0 !important;
+
+      i {
+        font-size: 1.75rem !important;
+      }
+    }
+  }
+}

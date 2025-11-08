@@ -29,20 +29,26 @@
 		<div class="ap-header-container">
 			<div class="ap-logo-wrapper">
 				<!-- IMPORT partials/header/brand.tpl -->
-				<!-- IMPORT partials/navigation-debug.tpl -->
 			</div>
 		</div>
 	</header>
 
-	<!-- Main Content Area -->
 	<div class="layout-container">
-		<main id="content" class="ap-main-content">
-			<div class="ap-content-wrapper">
-				<!-- IMPORT partials/noscript/warning.tpl -->
-				<!-- IMPORT partials/noscript/message.tpl -->
-				
-				<div widget-area="header" class="widget-area">
-					{{{each widgets.header}}}
-					{{widgets.header.html}}
-					{{{end}}}
-				</div>
+		<!-- IMPORT partials/noscript/warning.tpl -->
+		<!-- IMPORT partials/noscript/message.tpl -->
+		
+		<main id="content">
+			<div class="container-fluid">
+				<div class="row">
+					<!-- Left Sidebar - Hidden but provides navigation data -->
+					<div class="col-lg-2 col-md-3 sidebar-left" style="display: none !important;">
+						<!-- IMPORT partials/sidebar-left.tpl -->
+					</div>
+					
+					<!-- Main Content -->
+					<div class="col-lg-12 col-md-12">
+						<div widget-area="header">
+							{{{each widgets.header}}}
+							{{widgets.header.html}}
+							{{{end}}}
+						</div>

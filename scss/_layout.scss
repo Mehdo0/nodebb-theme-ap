@@ -7,7 +7,7 @@ body.ap-theme {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding-bottom: 80px !important; // Space for bottom navigation
+  padding-bottom: 80px !important; // Space for static bottom navigation
   overflow-x: hidden;
   
   .layout-container {
@@ -15,35 +15,39 @@ body.ap-theme {
   }
 }
 
-// Ensure sidebar-left is visible but positioned at bottom via CSS
-.sidebar-left {
-  display: block !important;
-  position: static !important; // Let CSS transformation handle positioning
+// AP Header styles
+.ap-header {
+  background: $ap-dark-green;
+  border-bottom: 2px solid $ap-gold;
+  padding: 1rem 0;
+  
+  .ap-header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $ap-gap-md;
+  }
+  
+  .ap-logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
-// Hide right sidebar
-.sidebar-right {
-  display: none !important;
-}
-
-// Main content area
+// Ensure main content has proper spacing
 main#content {
   flex: 1 0 auto;
-  padding-bottom: 20px;
+  padding: 2rem 0;
 }
 
 // Container adjustments
 .container-fluid {
-  max-width: 100%;
-  padding: 0;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-// Make sure the main content area takes full width on mobile
-@media (max-width: 768px) {
-  .col-lg-2.col-md-3.sidebar-left,
-  .col-lg-10.col-md-9 {
-    width: 100%;
-    max-width: 100%;
-    flex: 0 0 100%;
-  }
+// Make sure the main content area takes full width
+.col-lg-12.col-md-12 {
+  width: 100%;
+  max-width: 100%;
 }

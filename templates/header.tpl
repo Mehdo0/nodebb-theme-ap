@@ -2,6 +2,9 @@
 <html lang="{function.localeToHTML, userLang, defaultLang}" {{{if languageDirection}}}data-dir="{languageDirection}" style="direction: {languageDirection};"{{{end}}}>
 <head>
 	<title>{browserTitle}</title>
+	{{{each metaTags}}}{function.buildMetaTag}{{{{end}}}
+	<link rel="stylesheet" type="text/css" href="{relative_path}/assets/client{{{if bootswatchSkin}}}-{bootswatchSkin}{{{end}}}{{{ if (languageDirection=="rtl") }}}-rtl{{{ end }}}.css?{config.cache-buster}" />
+	{{{each linkTags}}}{function.buildLinkTag}{{{{end}}}
 
 	<script>
 		var config = JSON.parse('{{configJSON}}');
@@ -20,9 +23,7 @@
 			</div>
 		</div>
 	</header>
-	<!-- IMPORT partials/sidebar-left.tpl -->
 
-	<!-- Main Content -->
 	<main id="content" class="ap-main-content">
 		<div class="ap-content-wrapper">
 			<!-- IMPORT partials/noscript/warning.tpl -->

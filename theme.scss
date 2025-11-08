@@ -1,16 +1,8 @@
-// override harmony font-path
 $font-path: "./plugins/nodebb-theme-ap";
 
-// Import overrides BEFORE parent theme (contains Bootstrap variable overrides AND AP color definitions)
 @import "./scss/overrides";
-
-// Import parent theme (this will use our overridden variables)
 @import "../nodebb-theme-harmony/theme";
-
-// Import AP variables for CSS custom properties AFTER parent theme
 @import "./scss/ap_variables";
-
-// Import AP custom component styles AFTER parent theme
 @import "./scss/header";
 @import "./scss/layout";
 @import "./scss/navigation";

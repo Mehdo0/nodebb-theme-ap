@@ -45,7 +45,11 @@ nav[component="navigation"],
     display: none !important;
   }
   
-  min-height: 56px !important;
+
+.nav-pills .nav-link::after {
+    display: none !important;
+    }
+    min-height: 56px !important;
 }
 
 // Force vertical nav lists into horizontal layout

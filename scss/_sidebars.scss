@@ -55,7 +55,7 @@ nav[component="navigation"],
 }
 
 [component="navigation"] .nav .nav-item,
-.nav-pills .nav-item,
+.nav-item,
 .sidebar-left .nav-item,
 .left-sidebar .nav-item {
   flex: 1 1 auto !important;
@@ -64,7 +64,7 @@ nav[component="navigation"],
 }
 
 [component="navigation"] .nav .nav-link,
-.nav-pills .nav-link,
+.nav-link,
 .sidebar-left .nav-link,
 .left-sidebar .nav-link {
   display: flex !important;
@@ -79,15 +79,15 @@ nav[component="navigation"],
 }
 
 [component="navigation"] .nav .nav-link .icon,
-.nav-pills .nav-link .icon,
-.nav-pills .nav-link i,
+.nav-link .icon,
+.nav-link i,
 .sidebar-left .nav-link i {
   font-size: 1.2rem !important;
   margin-bottom: 4px !important;
 }
 
 [component="navigation"] .nav .nav-link.active,
-.nav-pills .nav-link.active,
+.nav-link.active,
 .sidebar-left .nav-link.active {
   color: $ap-gold !important;
   opacity: 1 !important;
@@ -106,7 +106,7 @@ body, .page, .content, .ap-main, main, #content {
 
 // 6) Responsive: on very small screens make items compact
 @media (max-width: 480px) {
-  [component="navigation"] .nav .nav-link,.nav-link {
+  [component="navigation"] .nav .nav-link{
     font-size: 0.75rem !important;
     padding: 6px 4px !important;
   }

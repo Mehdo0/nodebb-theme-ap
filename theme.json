@@ -8,7 +8,7 @@
   "less": [
     "public/less/ap.less",
     "public/less/style.less",
-    "publicV/less/ap-navigation.less"
+    "public/less/ap-navigation.less"
   ],
   "scripts": [
     "public/lib/ap.js"
@@ -141,7 +141,8 @@
     {
       "name": "Users Footer",
       "template": "users.tpl",
-      "location":     },
+      "location": "footer"
+    },
     {
       "name": "User Header",
       "template": "account/profile.tpl",

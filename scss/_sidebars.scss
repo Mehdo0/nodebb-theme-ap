@@ -116,3 +116,10 @@ body, .page, .content, .ap-main, main, #content {
 
 // 7) Defensive: ensure no leftover sidebar separators show
 .sidebar-sep, ._sidebar-sep, .divider-bottom { display: none !important; }
+
+// Remove notification dots from nav links
+.nav-pills .nav-link::before,
+.nav-pills .nav-link::after {
+  display: none !important;
+}
+

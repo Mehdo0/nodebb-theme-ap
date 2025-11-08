@@ -68,35 +68,23 @@
             </main>
         </div>
 
-        <!-- AP Bottom Navigation -->
-        <div id="ap-bottom-nav" class="ap-bottom-navigation">
-            <div class="ap-nav-items">
-                <a href="{relative_path}/" class="ap-nav-item" data-route="/">
-                    <i class="fa fa-home"></i>
-                    <span>Home</span>
-                </a>
-                <a href="{relative_path}/recent" class="ap-nav-item" data-route="/recent">
-                    <i class="fa fa-clock"></i>
-                    <span>Recent</span>
-                </a>
-                <a href="{relative_path}/unread" class="ap-nav-item" data-route="/unread">
-                    <i class="fa fa-inbox"></i>
-                    <span>Unread</span>
-                </a>
-                <a href="{relative_path}/popular" class="ap-nav-item" data-route="/popular">
-                    <i class="fa fa-fire"></i>
-                    <span>Popular</span>
-                </a>
-                <a href="{relative_path}/users" class="ap-nav-item" data-route="/users">
-                    <i class="fa fa-users"></i>
-                    <span>Users</span>
-                </a>
-            </div>
-        </div>
+<body class="{bodyClass} skin-{{{if bootswatchSkin}}}{bootswatchSkin}{{{else}}}noskin{{{end}}} ap-theme">
+	<!-- AP Header -->
+	<header class="ap-header">
+		<div class="ap-header-container">
+			<div class="ap-logo-wrapper">
+				<!-- IMPORT partials/header/brand.tpl -->
+			</div>
+		</div>
+	</header>
 
-        <!-- Footer Scripts -->
-        <script>
-        console.log('AP Theme: Header template loaded');
-        </script>
-    </body>
-</html>
+	<main id="content" class="ap-main-content">
+		<div class="ap-content-wrapper">
+			<!-- IMPORT partials/noscript/warning.tpl -->
+			<!-- IMPORT partials/noscript/message.tpl -->
+			
+			<div widget-area="header" class="widget-area">
+				{{{each widgets.header}}}
+				{{widgets.header.html}}
+				{{{end}}}
+			</div>

@@ -12,37 +12,15 @@
 			user: JSON.parse('{{userJSON}}')
 		};
 	</script>
-
-	{{{if useCustomHTML}}}
-	{{customHTML}}
-	{{{end}}}
-	{{{if useCustomCSS}}}
-	<style>{{customCSS}}</style>
-	{{{end}}}
 </head>
 
 <body class="{bodyClass} skin-{{{if bootswatchSkin}}}{bootswatchSkin}{{{else}}}noskin{{{end}}} ap-theme">
-	<a class="visually-hidden-focusable position-absolute top-0 start-0 p-3 m-3 bg-body" style="z-index: 1021;" href="#content">[[global:skip-to-content]]</a>
-
-	<!-- AP Custom Header -->
+	<!-- AP Header -->
 	<header class="ap-header">
 		<div class="ap-header-container">
-			<div class="ap-logo-wrapper">
-				<!-- IMPORT partials/header/brand.tpl -->
-			</div>
+			<!-- IMPORT partials/header/brand.tpl -->
 		</div>
-		<!-- IMPORT templates/test-navigation.tpl -->
-		<!-- IMPORT templates/test-build.tpl -->
 	</header>
 
-	<!-- Main Content -->
 	<main id="content" class="ap-main-content">
 		<div class="ap-content-wrapper">
-			<!-- IMPORT partials/noscript/warning.tpl -->
-			<!-- IMPORT partials/noscript/message.tpl -->
-			
-			<div widget-area="header" class="widget-area">
-				{{{each widgets.header}}}
-				{{widgets.header.html}}
-				{{{end}}}
-			</div>

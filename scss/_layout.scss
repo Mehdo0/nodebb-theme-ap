@@ -1,46 +1,13 @@
-// =============================================
-// AP Theme Layout Structure
-// =============================================
-
-// Body layout
 body.ap-theme {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  padding-bottom: 80px !important; // Space for bottom navigation
-  overflow-x: hidden;
+  padding-bottom: 70px !important;
 }
 
-// Main content wrapper
 .ap-main-content {
-  flex: 1 0 auto;
-  width: 100%;
-  max-width: 100%;
+  min-height: calc(100vh - 70px);
 }
 
-// Content wrapper
 .ap-content-wrapper {
-  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-}
-
-// AP Header styles
-.ap-header {
-  background: $ap-dark-green;
-  border-bottom: 2px solid $ap-gold;
-  padding: 1rem 0;
-  
-  .ap-header-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  .ap-logo-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 }

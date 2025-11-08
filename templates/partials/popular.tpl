@@ -1,0 +1,1 @@
+<!-- IMPORT partials/shoutbox.tpl -->

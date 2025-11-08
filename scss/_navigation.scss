@@ -82,3 +82,9 @@ nav[component="navigation"],
 body, .page, .content, main, #content {
   padding-bottom: 64px !important;
 }
+
+.nav-pills .nav-link span {
+  font-size: 0.7rem !important;
+  margin-top: 2px;
+  color: rgba(255, 255, 255, 0.8);
+}

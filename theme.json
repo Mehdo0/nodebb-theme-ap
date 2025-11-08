@@ -3,5 +3,6 @@
     "name": "AP",
     "description": "The default theme for NodeBB. Uses a standard approach to forum design.",
     "url": "https://github.com/Mehdo0/nodebb-theme-ap",
-    "screenshot": "screenshot.png"
+    "screenshot": "screenshot.png",
+    "baseTheme": "nodebb-theme-harmony"
 }

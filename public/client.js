@@ -1,63 +1,50 @@
 'use strict';
 
-console.log('AP Theme: client.js loaded');
-
 $(document).ready(function () {
-    // Function to transform navigation to bottom bar
-    function transformNavigationToBottom() {
-        // Look for the actual navigation element (it might be loaded dynamically)
-        const navigationSelectors = [
+    console.log('AP Theme: client.js loaded successfully');
+    
+    // Function to debug and find navigation
+    function debugNavigation() {
+        console.log('=== AP Theme: Debugging Navigation ===');
+        
+        // Check for various navigation elements
+        const selectors = [
             '[component="navigation"]',
-            '.sidebar-left',
             '[component="sidebar/left"]',
-            '.nav-pills.nav-stacked'
+            '.sidebar-left',
+            '.nav-pills',
+            '.nav-stacked',
+            '[component="mobile/navbar"]',
+            '.navbar-nav'
         ];
         
-        let navElement = null;
-        
-        // Try to find the navigation element
-        navigationSelectors.forEach(selector => {
-            const element = document.querySelector(selector);
-            if (element && !element.classList.contains('ap-bottom-navigation')) {
-                navElement = element;
-            }
+        selectors.forEach(selector => {
+            const elements = document.querySelectorAll(selector);
+            console.log(`Selector "${selector}": found ${elements.length} elements`);
+            elements.forEach((el, index) => {
+                console.log(`  [${index}]:`, el);
+                console.log(`  [${index}] classes:`, el.className);
+                console.log(`  [${index}] HTML:`, el.outerHTML.substring(0, 200) + '...');
+            });
         });
         
-        if (navElement) {
-            console.log('Found navigation element:', navElement);
-            
-            // Add our bottom navigation class
-            navElement.classList.add('ap-bottom-navigation');
-            
-            // Move it to the bottom of the page
-            document.body.appendChild(navElement);
-            
-            // Apply bottom navigation styles
-            applyBottomNavigationStyles();
-        }
+        // Check body classes
+        console.log('Body classes:', document.body.className);
+        
+        // Check if our CSS is applied
+        const testElement = document.createElement('div');
+        testElement.className = 'ap-bottom-navigation';
+        testElement.style.cssText = 'position: fixed; bottom: 0; left: 0; width: 100px; height: 100px; background: red; z-index: 9999;';
+        testElement.innerHTML = 'AP THEME TEST';
+        document.body.appendChild(testElement);
+        console.log('Test element added - if you see a red box, CSS is working');
     }
     
-    function applyBottomNavigationStyles() {
-        // These styles will be applied via our existing CSS
-        // The .ap-bottom-navigation class triggers the transformation
-    }
+    // Initial debug
+    setTimeout(debugNavigation, 1000);
     
-    // Initial transformation attempt
-    transformNavigationToBottom();
-    
-    // Listen for page changes (NodeBB uses AJAX navigation)
+    // Also debug on navigation
     $(window).on('action:ajaxify.end', function() {
-        setTimeout(transformNavigationToBottom, 100);
+        setTimeout(debugNavigation, 500);
     });
-    
-    // Also try periodically for dynamic content
-    let attempts = 0;
-    const maxAttempts = 10;
-    const interval = setInterval(() => {
-        transformNavigationToBottom();
-        attempts++;
-        if (attempts >= maxAttempts) {
-            clearInterval(interval);
-        }
-    }, 500);
 });

@@ -29,6 +29,7 @@
 		<div class="ap-header-container">
 			<div class="ap-logo-wrapper">
 				<!-- IMPORT partials/header/brand.tpl -->
+				<!-- IMPORT partials/navigation-debug.tpl -->
 			</div>
 		</div>
 	</header>

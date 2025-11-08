@@ -1,5 +1,6 @@
 {
 	"id": "nodebb-theme-ap",
+	
 	"hooks": [
 		{ "hook": "static:app.load", "method": "init" },
 		{ "hook": "filter:admin.header.build", "method": "addAdminNavigation" },
@@ -9,8 +10,9 @@
 		{ "hook": "filter:user.saveSettings", "method": "saveUserSettings" },
 		{ "hook": "filter:user.profileMenu", "method": "addProfileItem" },
 		{ "hook": "filter:middleware.renderHeader", "method": "filterMiddlewareRenderHeader" },
-		{ "hook": "filter:scripts.get", "method": "addScripts" }
+		{ "hook": "filter:middleware.render", "method": "overrideNavigation" }
 	],
+	
 	"scripts": [
 		"public/client.js"
 	],

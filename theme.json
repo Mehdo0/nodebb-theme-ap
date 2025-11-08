@@ -143,7 +143,11 @@
     {
       "name": "Users Footer",
       "template": "users.tpl",
+<<<<<<< HEAD
       "location": "footer"
+=======
+      "location":Next
+>>>>>>> parent of df85520 (changement de theme.json)
     },
     {
       "name": "User Header",
@@ -181,7 +185,7 @@
       "location": "header"
     },
     {
-      "name": "Login Footer",
+      "name":Setting "Login Footer",
       "template": "login.tpl",
       "location": "footer"
     },

@@ -36,12 +36,15 @@ nav[component="navigation"],
   align-items: center !important;
   padding: $ap-gap-xs 0 !important;
   
+  // *** THIS IS THE FIX ***
+  // This now hides the notification pills on the list items
   .nav-pills .nav-link::before,
-  .nav-pills .nav-link::after,
-  .nav-pills .nav-item::before,  /* ADD THIS LINE */
-  .nav-pills .nav-item::after {  /* AND ADD THIS LINE */
-  display: none !important;
-  }
+  .nav-pills .nav-link::after,
+  .nav-pills .nav-item::before,
+  .nav-pills .nav-item::after {
+    display: none !important;
+  }
+  
   min-height: 56px !important;
 }
 
@@ -130,7 +133,3 @@ body, .page, .content, .ap-main, main, #content {
 .sidebar-left .nav-link .unread-count {
   display: none !important;
 }
-
-
-
-

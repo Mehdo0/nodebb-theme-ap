@@ -1,13 +1,16 @@
-<!-- TEST: Sidebar template is loading -->
-<div style="background: red; color: white; padding: 10px; position: fixed; bottom: 0; left: 0; z-index: 9999;">
-    SIDEBAR TEMPLATE IS LOADING - If you see this, the template works!
-</div>
-
-<!-- AP Theme: Bottom Navigation (NodeBB Navigation Menu Only) -->
+<!-- AP Theme: Bottom Navigation (Using NodeBB Navigation Data) -->
 <nav component="sidebar/left" class="ap-bottom-navigation">
-    <!-- ... rest of your code ... -->
-
-<!-- AP Theme: Bottom Navigation Container -->
-<nav component="sidebar/left" class="ap-bottom-navigation">
-    <!-- Let NodeBB inject its actual navigation here -->
+    <ul id="main-nav" class="nav nav-pills" component="navigation">
+        {{{each navigation}}}
+        <li class="nav-item{{{ if navigation.active }}} active{{{ end }}}" data-id="{navigation.id}">
+            <a class="nav-link" href="{navigation.route}" title="{navigation.title}"{{{ if navigation.targetBlank }}} target="_blank"{{{ end }}}>
+                <i class="fa fa-fw {navigation.iconClass}"></i>
+                <span class="nav-text">{navigation.title}</span>
+                {{{ if navigation.content }}}
+                <span class="badge bg-danger">{navigation.content}</span>
+                {{{ end }}}
+            </a>
+        </li>
+        {{{ end }}}
+    </ul>
 </nav>

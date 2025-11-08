@@ -4,7 +4,7 @@
     "description": "Custom Audemars Piguet theme with bottom navigation",
     "version": "1.0.0",
     "baseTheme": "nodebb-theme-harmony",
-    "screenshot": null,
+    "screenshot": "screenshot.png",
     "url": "https://github.com/Mehdo0/nodebb-theme-ap",
     "hooks": [
         "static:app.load",
@@ -17,9 +17,6 @@
     "acpScripts": [
         "lib/modules.js"
     ],
-    "modules": {
-        "js": "lib/modules.js"
-    },
     "staticDirs": {
         "images": "public/images",
         "fonts": "public/fonts"

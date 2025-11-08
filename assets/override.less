@@ -1,4 +1,4 @@
-// AP Theme Bottom Navigation
+// AP Theme Bottom Navigation Styles
 #ap-bottom-nav {
     position: fixed !important;
     bottom: 0 !important;
@@ -7,18 +7,9 @@
     background: #1a1a1a !important;
     border-top: 1px solid #333 !important;
     z-index: 9999 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+    display: flex !important;
     height: 60px !important;
-
-    .ap-nav-container {
-        height: 100%;
-        display: flex;
-        align-items: center;
-    }
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.3) !important;
 
     .ap-nav-items {
         display: flex !important;
@@ -27,7 +18,7 @@
         width: 100% !important;
         height: 100% !important;
         margin: 0 !important;
-        padding: 0 !important;
+        padding: 0 8px !important;
     }
 
     .ap-nav-item {
@@ -41,21 +32,25 @@
         border-radius: 8px !important;
         transition: all 0.2s ease !important;
         min-width: 60px !important;
-        height: 50px !important;
+        height: 44px !important;
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif !important;
 
         i {
             font-size: 18px !important;
             margin-bottom: 2px !important;
+            line-height: 1 !important;
         }
 
         span {
             font-size: 10px !important;
             font-weight: 500 !important;
+            line-height: 1 !important;
         }
 
         &:hover {
             color: #fff !important;
             background: rgba(255,255,255,0.1) !important;
+            text-decoration: none !important;
         }
 
         &.active {
@@ -65,15 +60,17 @@
     }
 }
 
-// Adjust body padding for bottom navigation
+// Body padding adjustment
 body {
     padding-bottom: 70px !important;
 }
 
-// Hide default sidebars if needed
-[component="sidebar-left"],
-[component="sidebar-right"] {
-    display: none !important;
+// Hide default sidebars on mobile
+@media (max-width: 991px) {
+    [component="sidebar-left"],
+    [component="sidebar-right"] {
+        display: none !important;
+    }
 }
 
 // Mobile responsiveness
@@ -84,6 +81,7 @@ body {
         .ap-nav-item {
             padding: 6px 8px !important;
             min-width: 50px !important;
+            height: 40px !important;
             
             i {
                 font-size: 16px !important;
@@ -98,4 +96,9 @@ body {
     body {
         padding-bottom: 65px !important;
     }
+}
+
+// Ensure content isn't hidden behind nav
+.main-content {
+    min-height: calc(100vh - 70px) !important;
 }

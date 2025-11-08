@@ -1,21 +1,17 @@
-/* ===============================
-   AP THEME — Bottom Navigation
-   =============================== */
+/* ===================================
+   Bottom Navigation (Harmony override)
+   =================================== */
 
-/* ===== Variables de couleur par défaut ===== */
 $ap-dark-green: #1e3a34;
 $ap-light-gray: #f8f9fa;
 $ap-gold: #d4af37;
 $border-color: rgba(0, 0, 0, 0.1);
 
-/* ===== Structure générale ===== */
-
-/* Cible la navigation principale */
+/* Main bottom bar */
 [component="navigation"],
 nav[component="navigation"],
 .sidebar-left,
 .left-sidebar,
-.col-sidebar-left,
 #left-nav {
   position: fixed !important;
   left: 0 !important;
@@ -33,14 +29,12 @@ nav[component="navigation"],
   min-height: 56px !important;
 }
 
-/* Liste horizontale */
+/* Horizontal nav items */
 [component="navigation"] .nav,
 .nav-pills,
 .nav-stacked,
 .sidebar-left ul,
-.left-sidebar ul,
-.col-sidebar-left ul,
-#left-nav ul {
+.left-sidebar ul {
   display: flex !important;
   flex-direction: row !important;
   width: 100% !important;
@@ -49,21 +43,13 @@ nav[component="navigation"],
   list-style: none !important;
 }
 
-/* Items de navigation */
-[component="navigation"] .nav .nav-item,
-.nav-pills .nav-item,
-.sidebar-left .nav-item,
-.left-sidebar .nav-item {
+/* Individual nav links */
+.nav-pills .nav-item {
   flex: 1 1 auto !important;
   text-align: center !important;
-  margin: 0 !important;
 }
 
-/* Liens de navigation */
-[component="navigation"] .nav .nav-link,
-.nav-pills .nav-link,
-.sidebar-left .nav-link,
-.left-sidebar .nav-link {
+.nav-pills .nav-link {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
@@ -72,57 +58,27 @@ nav[component="navigation"],
   opacity: 0.9 !important;
   padding: 6px 8px !important;
   font-size: 0.85rem !important;
-  border-radius: 0 !important;
   text-decoration: none !important;
   transition: all 0.3s ease !important;
 }
 
-/* Icônes */
-[component="navigation"] .nav .nav-link i,
-.nav-pills .nav-link i,
-.sidebar-left .nav-link i {
+.nav-pills .nav-link i {
   font-size: 1.2rem !important;
   margin-bottom: 4px !important;
 }
 
-/* Effet au survol */
-[component="navigation"] .nav .nav-link:hover {
+.nav-pills .nav-link:hover {
   background-color: rgba(255, 255, 255, 0.1) !important;
   transform: translateY(-2px);
   opacity: 1 !important;
 }
 
-/* Actif */
-[component="navigation"] .nav .nav-link.active {
+.nav-pills .nav-link.active {
   color: $ap-gold !important;
-  opacity: 1 !important;
   background-color: rgba(255, 255, 255, 0.15) !important;
 }
 
-/* Cacher les badges inutiles */
-[component="navigation"] .nav .nav-link .unread-count,
-.nav-pills .nav-link .unread-count {
-  display: none !important;
-}
-
-/* Masquer les séparateurs ou header-nav redondants */
-.navbar-left,
-.navbar-side,
-.sidebar-sep,
-.divider-bottom {
-  display: none !important;
-}
-
-/* Empêche le contenu d'être masqué par la barre */
+/* Content padding to avoid overlap */
 body, .page, .content, main, #content {
   padding-bottom: 64px !important;
-}
-
-/* Responsive : petits écrans */
-@media (max-width: 480px) {
-  [component="navigation"] .nav .nav-link {
-    font-size: 0.75rem !important;
-    padding: 4px 2px !important;
-  }
-  body, .page, .content { padding-bottom: 72px !important; }
 }

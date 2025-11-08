@@ -2,92 +2,48 @@
 // AP Theme Layout Structure
 // =============================================
 
-// Body layout - full height, flex column
+// Body layout
 body.ap-theme {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding-bottom: 80px !important; // Increased space for bottom navigation
+  padding-bottom: 80px !important; // Space for bottom navigation
   overflow-x: hidden;
-}
-
-// Main content wrapper
-.ap-main-content {
-  flex: 1 0 auto;
-  width: 100%;
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
-}
-
-// Content wrapper - centers content with max width
-.ap-content-wrapper {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: $ap-gap-lg $ap-gap-md;
-  flex: 1 0 auto;
-}
-
-// Widget areas
-.widget-area {
-  width: 100%;
-  margin-bottom: $ap-gap-md;
-
-  &:empty {
-    display: none;
+  
+  .layout-container {
+    flex: 1 0 auto;
   }
 }
 
-// Hide default sidebars (we're using custom bottom nav)
-.sidebar-right,
-[component="sidebar/right"] {
-  display: none !important;
-}
-
-// Hide original sidebar-left when NOT bottom nav
-.sidebar,
-.sidebar-left:not(.ap-bottom-navigation),
-[component="sidebar/left"]:not(.ap-bottom-navigation) {
-  display: none !important;
-}
-
-// Adjust layout container
-.layout-container {
+// Ensure sidebar-left is visible but positioned at bottom via CSS
+.sidebar-left {
   display: block !important;
-  width: 100%;
+  position: static !important; // Let CSS transformation handle positioning
+}
+
+// Hide right sidebar
+.sidebar-right {
+  display: none !important;
+}
+
+// Main content area
+main#content {
+  flex: 1 0 auto;
+  padding-bottom: 20px;
+}
+
+// Container adjustments
+.container-fluid {
   max-width: 100%;
-  padding: 0 !important;
-  margin: 0 !important;
-  position: relative;
+  padding: 0;
 }
 
-// Remove default panel styles
-#panel {
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-// Responsive adjustments
+// Make sure the main content area takes full width on mobile
 @media (max-width: 768px) {
-  body.ap-theme {
-    padding-bottom: 80px !important; // More space on mobile
-  }
-
-  .ap-content-wrapper {
-    padding: $ap-gap-md $ap-gap-sm;
-  }
-}
-
-@media (max-width: 480px) {
-  body.ap-theme {
-    padding-bottom: 70px !important;
-  }
-
-  .ap-content-wrapper {
-    padding: $ap-gap-sm;
+  .col-lg-2.col-md-3.sidebar-left,
+  .col-lg-10.col-md-9 {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 100%;
   }
 }

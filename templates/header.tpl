@@ -31,17 +31,31 @@
 
 	<!-- IMPORT partials/sidebar-left.tpl -->
 
-	<div class="layout-container d-flex flex-column gap-4">
-		<div widget-area="header" class="widget-area">
-			{{{each widgets.header}}}
-			{{widgets.header.html}}
-			{{{end}}}
-		</div>
+	<main id="panel" class="slideout-panel">
+		<nav class="navbar navbar-expand-lg bg-light header border-bottom sticky-top" id="header-menu" component="navbar">
+			<div class="container-fluid">
+				<!-- IMPORT partials/menu.tpl -->
+			</div>
+		</nav>
+		
+		<script>
+			const rect = document.getElementById('header-menu').getBoundingClientRect();
+			const offset = Math.max(0, rect.bottom);
+			document.documentElement.style.setProperty('--panel-offset', offset + 'px');
+		</script>
 
-		<div widget-area="brand-header" class="brand-header widget-area">
-			{{{each widgets.brand-header}}}
-			{{widgets.brand-header.html}}
-			{{{end}}}
-		</div>
+		<div class="container-fluid mt-4" id="content">
+			<!-- IMPORT partials/noscript/warning.tpl -->
+			<!-- IMPORT partials/noscript/message.tpl -->
 
-		<main id="content" class="page-content d-flex flex-column gap-4">
+			<div widget-area="header" class="widget-area">
+				{{{each widgets.header}}}
+				{{widgets.header.html}}
+				{{{end}}}
+			</div>
+
+			<div widget-area="brand-header" class="brand-header widget-area">
+				{{{each widgets.brand-header}}}
+				{{widgets.brand-header.html}}
+				{{{end}}}
+			</div>

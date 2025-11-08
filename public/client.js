@@ -1,5 +1,7 @@
 'use strict';
 
+console.log('AP Theme: client.js loaded');
+
 $(document).ready(function () {
     // Function to transform navigation to bottom bar
     function transformNavigationToBottom() {

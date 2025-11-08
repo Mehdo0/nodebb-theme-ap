@@ -18,8 +18,12 @@
 	<!-- AP Header -->
 	<header class="ap-header">
 		<div class="ap-header-container">
-			<!-- IMPORT partials/header/brand.tpl -->
+			<div class="ap-logo-wrapper">
+				<!-- IMPORT partials/header/brand.tpl -->
+			</div>
 		</div>
+		<!-- IMPORT templates/test-navigation.tpl -->
+		<!-- IMPORT templates/test-build.tpl -->
 	</header>
 
 	<main id="content" class="ap-main-content">

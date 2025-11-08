@@ -1,49 +1,199 @@
-.ap-bottom-navigation {
+// =============================================
+// AP Theme: Bottom Navigation Bar
+// For JavaScript-created navigation
+// =============================================
+
+// Target our JavaScript-created navigation
+nav.ap-bottom-navigation.ap-bottom-navigation-js {
+  // Position at bottom
   position: fixed !important;
   bottom: 0 !important;
   left: 0 !important;
   right: 0 !important;
-  background: #00473E !important;
-  height: 60px !important;
+  top: auto !important;
   z-index: 1030 !important;
+  
+  // Dimensions
+  width: 100% !important;
+  height: 64px !important;
+  
+  // Styling
+  background: $ap-dark-green !important;
+  border-top: 2px solid $ap-gold !important;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15) !important;
+  
+  // Layout
   display: flex !important;
   align-items: center !important;
-  border-top: 2px solid #07D972 !important;
+  justify-content: center !important;
+  
+  // Remove default styles
+  padding: 0 !important;
+  margin: 0 !important;
 
+  // Navigation list
   ul {
+    // Horizontal layout
     display: flex !important;
     flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-around !important;
+    
+    // Sizing
     width: 100% !important;
+    max-width: 1200px !important;
+    height: 100% !important;
+    
+    // Reset
     margin: 0 !important;
     padding: 0 10px !important;
     list-style: none !important;
-    justify-content: space-around !important;
   }
 
+  // Navigation items
   .nav-item {
-    flex: 1;
-    text-align: center;
+    flex: 1 1 auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 120px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
+  // Navigation links
   .nav-link {
+    // Layout
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    color: white !important;
-    text-decoration: none !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    
+    // Sizing
+    width: 100% !important;
+    height: 54px !important;
     padding: 8px !important;
-
+    
+    // Styling
+    color: $ap-light-gray !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 4px !important;
+    text-decoration: none !important;
+    
+    // Transitions
+    transition: all 0.2s ease !important;
+    
+    // Icons
     i {
-      font-size: 1.2rem !important;
-      margin-bottom: 4px !important;
+      font-size: 1.35rem !important;
+      color: $ap-light-gray !important;
+      margin: 0 !important;
+      transition: all 0.2s ease !important;
     }
 
-    span {
-      font-size: 0.7rem !important;
+    // Text labels
+    .nav-text {
+      font-size: 0.65rem !important;
+      font-weight: 500 !important;
+      color: $ap-light-gray !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.3px !important;
+      white-space: nowrap !important;
+      margin: 0 !important;
+      line-height: 1 !important;
     }
 
+    // Hover state
     &:hover {
-      color: #07D972 !important;
+      color: $ap-gold !important;
+      background: rgba(255, 255, 255, 0.08) !important;
+      transform: translateY(-3px) !important;
+
+      i {
+        color: $ap-gold !important;
+        transform: scale(1.15) !important;
+      }
+
+      .nav-text {
+        color: $ap-gold !important;
+      }
+    }
+
+    // Active state
+    &.active {
+      color: $ap-gold !important;
+      background: rgba(255, 255, 255, 0.12) !important;
+      position: relative !important;
+
+      i {
+        color: $ap-gold !important;
+      }
+
+      .nav-text {
+        color: $ap-gold !important;
+        font-weight: 600 !important;
+      }
+
+      // Top indicator line
+      &::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 50% !important;
+        height: 3px !important;
+        background: $ap-gold !important;
+        border-radius: 0 0 3px 3px !important;
+      }
+    }
+  }
+}
+
+// Hide default sidebars and mobile bars
+.sidebar-left,
+.sidebar-right,
+[component="sidebar/left"],
+[component="sidebar/right"],
+[component="bottomBar"],
+.bottomBar {
+  display: none !important;
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  nav.ap-bottom-navigation.ap-bottom-navigation-js {
+    height: 70px !important;
+
+    .nav-link {
+      height: 60px !important;
+
+      i {
+        font-size: 1.5rem !important;
+      }
+
+      .nav-text {
+        font-size: 0.6rem !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  nav.ap-bottom-navigation.ap-bottom-navigation-js {
+    .nav-text {
+      display: none !important;
+    }
+
+    .nav-link {
+      height: 60px !important;
+      gap: 0 !important;
+
+      i {
+        font-size: 1.75rem !important;
+      }
     }
   }
 }

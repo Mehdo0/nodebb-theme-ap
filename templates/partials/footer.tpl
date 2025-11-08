@@ -1,7 +1,7 @@
 </div>
 	</main>
 
-	<!-- Bottom Navigation Bar -->
+	<!-- Bottom Navigation -->
 	<!-- IMPORT partials/sidebar-left.tpl -->
 
 </body>

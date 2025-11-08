@@ -7,7 +7,8 @@ body.ap-theme {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding-bottom: 70px !important; // Space for bottom navigation
+  padding-bottom: 74px !important; // Space for bottom navigation
+  overflow-x: hidden;
 }
 
 // Main content wrapper
@@ -17,6 +18,7 @@ body.ap-theme {
   max-width: 100%;
   display: flex;
   flex-direction: column;
+  min-height: 0;
 }
 
 // Content wrapper - centers content with max width
@@ -38,65 +40,16 @@ body.ap-theme {
   }
 }
 
-// Admin announcements / central feed area
-.ap-announcement-feed {
-  background: $white;
-  border-radius: $border-radius-lg;
-  border: 1px solid rgba($ap-dark-green, 0.1);
-  padding: $ap-gap-lg;
-  margin-bottom: $ap-gap-lg;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-
-  .feed-header {
-    display: flex;
-    align-items: center;
-    gap: $ap-gap-sm;
-    margin-bottom: $ap-gap-md;
-    padding-bottom: $ap-gap-sm;
-    border-bottom: 2px solid $ap-gold;
-
-    h2 {
-      font-family: $font-family-secondary;
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: $ap-dark-green;
-      margin: 0;
-    }
-
-    i {
-      color: $ap-gold;
-      font-size: 1.75rem;
-    }
-  }
-
-  .feed-content {
-    max-height: 600px;
-    overflow-y: auto;
-
-    &::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    &::-webkit-scrollbar-track {
-      background: $ap-light-gray;
-      border-radius: 4px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background: rgba($ap-dark-green, 0.3);
-      border-radius: 4px;
-
-      &:hover {
-        background: rgba($ap-dark-green, 0.5);
-      }
-    }
-  }
-}
-
-// REMOVED: Don't hide sidebars - let navigation.scss handle it
-// Hide only RIGHT sidebar
+// Hide default sidebars (we're using custom bottom nav)
 .sidebar-right,
 [component="sidebar/right"] {
+  display: none !important;
+}
+
+// Hide original sidebar-left when NOT bottom nav
+.sidebar,
+.sidebar-left:not(.ap-bottom-navigation),
+[component="sidebar/left"]:not(.ap-bottom-navigation) {
   display: none !important;
 }
 
@@ -126,13 +79,14 @@ body.ap-theme {
   .ap-content-wrapper {
     padding: $ap-gap-md $ap-gap-sm;
   }
+}
 
-  .ap-announcement-feed {
-    padding: $ap-gap-md;
-    border-radius: $border-radius;
+@media (max-width: 480px) {
+  body.ap-theme {
+    padding-bottom: 70px !important;
+  }
 
-    .feed-header h2 {
-      font-size: 1.25rem;
-    }
+  .ap-content-wrapper {
+    padding: $ap-gap-sm;
   }
 }

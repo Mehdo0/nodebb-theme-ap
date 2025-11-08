@@ -1,11 +1,14 @@
 // =============================================
 // AP Theme: Bottom Navigation Bar
-// Targets ACTUAL NodeBB navigation structure
+// Targets dynamically loaded NodeBB navigation
 // =============================================
 
-// Bottom navigation container
+// Bottom navigation container - multiple possible selectors
 nav.ap-bottom-navigation,
-[component="sidebar/left"].ap-bottom-navigation {
+[component="sidebar/left"].ap-bottom-navigation,
+[component="navigation"].ap-bottom-navigation,
+.sidebar-left.ap-bottom-navigation,
+.nav-pills.nav-stacked.ap-bottom-navigation {
   // Position at bottom
   position: fixed !important;
   bottom: 0 !important;
@@ -33,8 +36,10 @@ nav.ap-bottom-navigation,
   margin: 0 !important;
   transform: none !important;
 
-  // Target the ACTUAL NodeBB navigation structure
-  .nav-pills {
+  // Target navigation lists
+  .nav-pills,
+  .nav,
+  ul {
     // Horizontal layout
     display: flex !important;
     flex-direction: row !important;
@@ -51,7 +56,7 @@ nav.ap-bottom-navigation,
     padding: 0 $ap-gap-xs !important;
     list-style: none !important;
     
-    // Remove default stacked styles
+    // Remove stacked styles
     &.nav-stacked {
       flex-direction: row !important;
       
@@ -64,7 +69,8 @@ nav.ap-bottom-navigation,
   }
 
   // Navigation items
-  .nav-item {
+  .nav-item,
+  li {
     flex: 1 1 auto !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -75,7 +81,8 @@ nav.ap-bottom-navigation,
   }
 
   // Navigation links
-  .nav-link {
+  .nav-link,
+  a {
     // Layout
     display: flex !important;
     flex-direction: column !important;
@@ -177,17 +184,27 @@ nav.ap-bottom-navigation,
 
 // Hide the default sidebar navigation (not our bottom nav)
 .sidebar-left:not(.ap-bottom-navigation),
-[component="sidebar/left"]:not(.ap-bottom-navigation) {
+[component="sidebar/left"]:not(.ap-bottom-navigation),
+[component="navigation"]:not(.ap-bottom-navigation) {
+  display: none !important;
+}
+
+// Hide the mobile bottom bar since we're using our own
+[component="bottomBar"],
+.bottomBar {
   display: none !important;
 }
 
 // Responsive - mobile
 @media (max-width: 768px) {
   nav.ap-bottom-navigation,
-  [component="sidebar/left"].ap-bottom-navigation {
+  [component="sidebar/left"].ap-bottom-navigation,
+  [component="navigation"].ap-bottom-navigation,
+  .sidebar-left.ap-bottom-navigation {
     height: 70px !important;
 
-    .nav-link {
+    .nav-link,
+    a {
       height: 60px !important;
 
       i {
@@ -204,12 +221,16 @@ nav.ap-bottom-navigation,
 // Responsive - very small screens (hide text, icons only)
 @media (max-width: 480px) {
   nav.ap-bottom-navigation,
-  [component="sidebar/left"].ap-bottom-navigation {
-    .nav-link span {
+  [component="sidebar/left"].ap-bottom-navigation,
+  [component="navigation"].ap-bottom-navigation,
+  .sidebar-left.ap-bottom-navigation {
+    .nav-link span,
+    a span {
       display: none !important;
     }
 
-    .nav-link {
+    .nav-link,
+    a {
       height: 60px !important;
       gap: 0 !important;
 

@@ -69,14 +69,3 @@
   visibility: visible !important;
   opacity: 1 !important;
 }
-
-// Mobile adjustments
-@media (max-width: 991px) {
-  .sidebar.sidebar-left {
-    display: none !important;
-  }
-  
-  .layout-container {
-    padding-bottom: 40px !important;
-  }
-}

@@ -141,8 +141,7 @@
     {
       "name": "Users Footer",
       "template": "users.tpl",
-      "location":Next
-    },
+      "location":     },
     {
       "name": "User Header",
       "template": "account/profile.tpl",
@@ -179,7 +178,7 @@
       "location": "header"
     },
     {
-      "name":Setting "Login Footer",
+      "name": "Login Footer",
       "template": "login.tpl",
       "location": "footer"
     },

@@ -8,6 +8,15 @@ body.ap-theme {
   flex-direction: column;
   min-height: 100vh;
   padding-bottom: 74px !important; // Space for bottom navigation
+  overflow-x: hidden;
+  
+  // Ensure layout container takes full height
+  .layout-container {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
 }
 
 // Main content wrapper
@@ -59,6 +68,7 @@ body.ap-theme {
   max-width: 100%;
   padding: 0 !important;
   margin: 0 !important;
+  position: relative;
 }
 
 // Remove default panel styles

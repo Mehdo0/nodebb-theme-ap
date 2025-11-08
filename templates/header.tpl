@@ -34,13 +34,14 @@
 	</header>
 
 	<!-- Main Content Area -->
-	<main id="content" class="ap-main-content">
-		<div class="ap-content-wrapper">
-			<!-- IMPORT partials/noscript/warning.tpl -->
-			<!-- IMPORT partials/noscript/message.tpl -->
-			
-			<div widget-area="header" class="widget-area">
-				{{{each widgets.header}}}
-				{{widgets.header.html}}
-				{{{end}}}
-			</div>
+	<div class="layout-container">
+		<main id="content" class="ap-main-content">
+			<div class="ap-content-wrapper">
+				<!-- IMPORT partials/noscript/warning.tpl -->
+				<!-- IMPORT partials/noscript/message.tpl -->
+				
+				<div widget-area="header" class="widget-area">
+					{{{each widgets.header}}}
+					{{widgets.header.html}}
+					{{{end}}}
+				</div>

@@ -10,7 +10,7 @@ $(document).ready(function () {
         
         navLinks.forEach(link => {
             const href = link.getAttribute('href');
-            if (href && currentPath.includes(href.replace(relative_path, ''))) {
+            if (href && currentPath.startsWith(href)) {
                 link.classList.add('active');
             } else {
                 link.classList.remove('active');

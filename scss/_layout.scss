@@ -9,10 +9,24 @@ body.ap-theme {
   min-height: 100vh;
   padding-bottom: 80px !important; // Space for static bottom navigation
   overflow-x: hidden;
-  
-  .layout-container {
-    flex: 1 0 auto;
-  }
+}
+
+// Main content wrapper
+.ap-main-content {
+  flex: 1 0 auto;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+// Content wrapper - centers content with max width
+.ap-content-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $ap-gap-lg $ap-gap-md;
+  flex: 1 0 auto;
 }
 
 // AP Header styles
@@ -34,20 +48,82 @@ body.ap-theme {
   }
 }
 
-// Ensure main content has proper spacing
-main#content {
-  flex: 1 0 auto;
-  padding: 2rem 0;
+// =============================================
+// SIDEBAR HIDING - CRITICAL FIXES
+// =============================================
+
+// Hide ALL default sidebars completely
+.sidebar-left,
+.sidebar-right,
+[component="sidebar/left"],
+[component="sidebar/right"],
+.col-xs-12.col-md-3.sidebar-left, // Common Harmony sidebar classes
+.col-xs-12.col-md-3.sidebar-right,
+.sidebar,
+.sidebar-container {
+  display: none !important;
 }
 
-// Container adjustments
+// Hide the mobile bottom bar completely
+[component="bottomBar"],
+.bottomBar,
+.navigator-mobile,
+.bottomBar-new {
+  display: none !important;
+}
+
+// Hide any widget areas that might be appearing as sidebars
+[widget-area="sidebar"],
+[data-widget-area="sidebar"] {
+  display: none !important;
+}
+
+// Ensure main content takes full width
+.layout-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+// Remove any default Bootstrap grid constraints
+.container,
 .container-fluid {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 100% !important;
+  padding: 0 !important;
 }
 
-// Make sure the main content area takes full width
-.col-lg-12.col-md-12 {
+.row {
+  margin: 0 !important;
+}
+
+// Widget areas in main content only
+.widget-area {
   width: 100%;
-  max-width: 100%;
+  margin-bottom: $ap-gap-md;
+
+  &:empty {
+    display: none;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  body.ap-theme {
+    padding-bottom: 80px !important;
+  }
+
+  .ap-content-wrapper {
+    padding: $ap-gap-md $ap-gap-sm;
+  }
+}
+
+@media (max-width: 480px) {
+  body.ap-theme {
+    padding-bottom: 70px !important;
+  }
+
+  .ap-content-wrapper {
+    padding: $ap-gap-sm;
+  }
 }

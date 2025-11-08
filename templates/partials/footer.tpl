@@ -1,15 +1,12 @@
-						<div widget-area="footer">
-							{{{each widgets.footer}}}
-							{{widgets.footer.html}}
-							{{{end}}}
-						</div>
-					</div> <!-- Close main content col -->
-				</div> <!-- Close row -->
-			</div> <!-- Close container-fluid -->
-		</main>
-	</div> <!-- Close layout-container -->
+			<div widget-area="footer" class="widget-area">
+				{{{each widgets.footer}}}
+				{{widgets.footer.html}}
+				{{{end}}}
+			</div>
+		</div> <!-- Close ap-content-wrapper -->
+	</main> <!-- Close ap-main-content -->
 
-	<!-- Bottom Navigation - Static and always visible -->
+	<!-- Static Bottom Navigation -->
 	<div class="ap-bottom-navigation-static">
 		<!-- IMPORT partials/sidebar-left.tpl -->
 	</div>

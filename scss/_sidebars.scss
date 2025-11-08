@@ -98,6 +98,15 @@ nav[component="navigation"],
 .sidebar-left .nav-link i {
   font-size: 1.2rem !important;
   margin-bottom: 4px !important;
+  color: $ap-light-gray !important;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+[component="navigation"] .nav .nav-link:hover i,
+.nav-pills .nav-link:hover i,
+.sidebar-left .nav-link:hover i {
+  color: $ap-gold !important;
+  transform: translateY(-2px) scale(1.06);
 }
 
 [component="navigation"] .nav .nav-link.active,

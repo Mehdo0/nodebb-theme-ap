@@ -34,7 +34,11 @@
 		<!-- IMPORT templates/test-navigation.tpl -->
 		<!-- IMPORT templates/test-build.tpl -->
 	</header>
+
+	<!-- Bottom Navigation -->
 	<!-- IMPORT partials/sidebar-left.tpl -->
+
+	<!-- IMPORT partials/footer-js.tpl -->
 
 	<!-- Main Content -->
 	<main id="content" class="ap-main-content">

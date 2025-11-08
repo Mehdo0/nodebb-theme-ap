@@ -4,7 +4,7 @@
   color: $ap-light-gray;
   display: block !important;
   visibility: visible !important;
-  opacity: 1 !important;
+  opacity: 0.9 !important;
   
   .col-12 {
     border-bottom-color: rgba($ap-dark-text, 0.06) !important;
@@ -30,17 +30,8 @@
     display: block;
   }
 
-  .ap-club {
-    margin-left: $ap-gap-sm;
-    color: $ap-dark-text; // Dark text on white background
-    font-family: $font-family-sans-serif;
-    font-weight: 600;
-    font-size: 1.1rem;
-    letter-spacing: 0.02em;
-  }
 
   @media (max-width: 767px) {
     .ap-logo-img { height: 40px; }
-    .ap-club { font-size: 0.9rem; }
   }
 }

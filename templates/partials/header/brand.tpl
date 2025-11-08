@@ -14,7 +14,6 @@
 			</a>
 			{{{ end }}}
 			
-			<span class="ap-club fs-6 fw-bold text-body">Club</span>
 		</div>
 	</div>
 </div>

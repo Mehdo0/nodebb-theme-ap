@@ -6,10 +6,12 @@
     .nav-item {
       .nav-link {
         min-width: 60px;
+        transition: all 0.3s ease; // Smooth animation
         
         i {
           font-size: 1.25rem;
           margin-bottom: 0.25rem;
+          transition: transform 0.3s ease; // Icon animation
         }
         
         // Hide text in collapsed state, show icon
@@ -26,6 +28,21 @@
         .nav-link {
           background-color: rgba($ap-dark-green, 0.1);
           border-radius: 0.375rem;
+          transform: translateY(-2px); // Lift effect on hover
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); // Shadow on hover
+          
+          i {
+            transform: scale(1.1); // Slightly enlarge icon
+            color: $ap-dark-green; // Change color on hover
+          }
+        }
+      }
+      
+      // Active state
+      &.active {
+        .nav-link {
+          background-color: rgba($ap-dark-green, 0.15);
+          border-radius: 0.375rem;
         }
       }
     }
@@ -40,5 +57,14 @@
   
   .bottombar-nav {
     background: $ap-light-gray !important;
+    
+    .nav-link {
+      transition: all 0.3s ease; // Smooth animation for mobile too
+      
+      &:hover {
+        background-color: rgba($ap-dark-green, 0.1);
+        border-radius: 0.375rem;
+      }
+    }
   }
 }

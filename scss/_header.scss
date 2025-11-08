@@ -8,16 +8,20 @@
   
   .col-12 {
     border-bottom-color: rgba($ap-dark-text, 0.06) !important;
+    padding-bottom: 0 !important; // Remove padding
   }
 
   [component="brand/wrapper"] {
     padding: 1rem 0;
+    background: white; // White background box
+    border-radius: 12px; // Rounded borders
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
   }
 
   [component="brand/anchor"],
   [component="siteTitle"] {
     text-decoration: none;
-    color: $ap-light-gray;
+    color: $ap-dark-text; // Dark text on white background
   }
 
   .ap-logo-img {
@@ -28,7 +32,7 @@
 
   .ap-club {
     margin-left: $ap-gap-sm;
-    color: $ap-light-gray;
+    color: $ap-dark-text; // Dark text on white background
     font-family: $font-family-sans-serif;
     font-weight: 600;
     font-size: 1.1rem;

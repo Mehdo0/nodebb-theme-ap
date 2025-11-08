@@ -1,6 +1,8 @@
 {
   "id": "nodebb-theme-ap",
-  "name": "NodeBB Audemars Piguet Theme",
-  "description": "A custom theme for the AP forum",
-  "url": "https-github.com-Mehdo0-nodebb-theme-ap",
+  "name": "AP Theme",
+  "description": "My custom theme for NodeBB",
+  "screenshot": "screenshot.png",
+  "templates": "templates",
+  "staticDir": "static"
 }

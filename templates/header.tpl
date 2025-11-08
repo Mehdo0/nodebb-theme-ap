@@ -33,29 +33,6 @@
 		<!-- IMPORT partials/mobile-header.tpl -->
 	{{{ end }}}
 
-	<!-- ==========================================
-	     MAIN LAYOUT
-	     ========================================== -->
-	<div class="layout-container d-flex flex-column justify-content-between pb-4 pb-md-0">
-
-		<!-- LEFT SIDEBAR (becomes bottom nav on all screens) -->
-		<!-- IMPORT partials/sidebar-left.tpl -->
-
-		<!-- MAIN CONTENT AREA -->
-		<main id="panel" class="d-flex flex-column gap-3 flex-grow-1" style="min-width: 0;">
-			<!-- SITE BRAND / LOGO -->
-			<!-- IMPORT partials/header/brand.tpl -->
-
-			<!-- PAGE CONTENT -->
-			<div class="container-lg px-md-4 d-flex flex-column gap-3 h-100 mb-5 mb-lg-0" id="content">
-				<!-- NOSCRIPT FALLBACKS -->
-				<!-- IMPORT partials/noscript/warning.tpl -->
-				<!-- IMPORT partials/noscript/message.tpl -->
-			</div>
-		</main>
-
-		<!-- RIGHT SIDEBAR DISABLED -->
-		<!-- (You can re-enable later if needed)
 		<!-- IMPORT partials/sidebar.tpl -->
 	</div>
 	<!-- IMPORT partials/bottom-nav.tpl -->

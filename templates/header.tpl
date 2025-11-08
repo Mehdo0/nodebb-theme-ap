@@ -29,9 +29,9 @@
 		[[global:skip-to-content]]
 	</a>
 
-	<!-- IMPORT partials/menu.tpl -->
+	<!-- IMPORT partials/sidebar-left.tpl -->
 
-	<div class="layout-container d-flex flex-column">
+	<div class="layout-container d-flex flex-column gap-4">
 		<div widget-area="header" class="widget-area">
 			{{{each widgets.header}}}
 			{{widgets.header.html}}
@@ -44,4 +44,4 @@
 			{{{end}}}
 		</div>
 
-		<main id="content" class="page-content">
+		<main id="content" class="page-content d-flex flex-column gap-4">

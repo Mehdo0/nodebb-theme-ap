@@ -118,8 +118,8 @@ body, .page, .content, .ap-main, main, #content {
 .sidebar-sep, ._sidebar-sep, .divider-bottom { display: none !important; }
 
 // Force hide any pseudo-elements that might be creating notification dots
-.nav-pills .nav-link *::before,
-.nav-pills .nav-link *::after {
+.nav-pills .nav-link::before,
+.nav-pills .nav-link::after {
   display: none !important;
 }
 

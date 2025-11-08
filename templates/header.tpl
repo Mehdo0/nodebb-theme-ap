@@ -23,7 +23,9 @@
 			</div>
 		</div>
 	</header>
+	<!-- IMPORT partials/sidebar-left.tpl -->
 
+	<!-- Main Content -->
 	<main id="content" class="ap-main-content">
 		<div class="ap-content-wrapper">
 			<!-- IMPORT partials/noscript/warning.tpl -->

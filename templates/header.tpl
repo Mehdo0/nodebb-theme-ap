@@ -15,25 +15,48 @@
 	</script>
 
 	{{{if useCustomHTML}}}
-	{{customHTML}}
+		{{customHTML}}
 	{{{end}}}
+
 	{{{if useCustomCSS}}}
-	<style>{{customCSS}}</style>
+		<style>{{customCSS}}</style>
 	{{{end}}}
 </head>
 
 <body class="{bodyClass} skin-{{{if bootswatchSkin}}}{bootswatchSkin}{{{else}}}noskin{{{end}}}">
-	<a class="visually-hidden-focusable position-absolute top-0 start-0 p-3 m-3 bg-body" style="z-index: 1021;" href="#content">[[global:skip-to-content]]</a>
+
+	<a class="visually-hidden-focusable position-absolute top-0 start-0 p-3 m-3 bg-body" style="z-index: 1021;" href="#content">
+		[[global:skip-to-content]]
+	</a>
 
 	{{{ if config.theme.topMobilebar }}}
-	<!-- IMPORT partials/mobile-header.tpl -->
+		<!-- IMPORT partials/mobile-header.tpl -->
 	{{{ end }}}
 
-	<div class="layout-container d-flex justify-content-between pb-4 pb-md-0">
+	<!-- ==========================================
+	     MAIN LAYOUT
+	     ========================================== -->
+	<div class="layout-container d-flex flex-column justify-content-between pb-4 pb-md-0">
+
+		<!-- LEFT SIDEBAR (becomes bottom nav on all screens) -->
 		<!-- IMPORT partials/sidebar-left.tpl -->
 
+		<!-- MAIN CONTENT AREA -->
 		<main id="panel" class="d-flex flex-column gap-3 flex-grow-1" style="min-width: 0;">
+			<!-- SITE BRAND / LOGO -->
 			<!-- IMPORT partials/header/brand.tpl -->
+
+			<!-- PAGE CONTENT -->
 			<div class="container-lg px-md-4 d-flex flex-column gap-3 h-100 mb-5 mb-lg-0" id="content">
-			<!-- IMPORT partials/noscript/warning.tpl -->
-			<!-- IMPORT partials/noscript/message.tpl -->
+				<!-- NOSCRIPT FALLBACKS -->
+				<!-- IMPORT partials/noscript/warning.tpl -->
+				<!-- IMPORT partials/noscript/message.tpl -->
+			</div>
+		</main>
+
+		<!-- RIGHT SIDEBAR DISABLED -->
+		<!-- (You can re-enable later if needed)
+		<!-- IMPORT partials/sidebar.tpl -->
+	</div>
+</body>
+</html>

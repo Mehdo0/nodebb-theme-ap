@@ -137,3 +137,8 @@ body, .page, .content, .ap-main, main, #content {
 .sidebar-left .nav-link .unread-count {
   display: none !important;
 }
+
+/* Hide right sidebar entirely */
+.sidebar, .sidebar-right, .widget-area-right {
+  display: none !important;
+}

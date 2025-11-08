@@ -106,8 +106,7 @@ body, .page, .content, .ap-main, main, #content {
 
 // 6) Responsive: on very small screens make items compact
 @media (max-width: 480px) {
-  [component="navigation"] .nav .nav-link,
-  .nav-pills .nav-link {
+  [component="navigation"] .nav .nav-link,.nav-link {
     font-size: 0.75rem !important;
     padding: 6px 4px !important;
   }
@@ -117,9 +116,4 @@ body, .page, .content, .ap-main, main, #content {
 // 7) Defensive: ensure no leftover sidebar separators show
 .sidebar-sep, ._sidebar-sep, .divider-bottom { display: none !important; }
 
-// Force hide any pseudo-elements that might be creating notification dots
-.nav-pills .nav-link::before,
-.nav-pills .nav-link::after {
-  display: none !important;
-}
 

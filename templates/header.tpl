@@ -11,51 +11,29 @@
 		var app = {
 			user: JSON.parse('{{userJSON}}')
 		};
-		document.documentElement.style.setProperty('--panel-offset', `${localStorage.getItem('panelOffset') || 0}px`);
+		document.documentElement.style.setProperty('--panel-offset', `0px`);
 	</script>
 
 	{{{if useCustomHTML}}}
-		{{customHTML}}
+	{{customHTML}}
 	{{{end}}}
-
 	{{{if useCustomCSS}}}
-		<style>{{customCSS}}</style>
+	<style>{{customCSS}}</style>
 	{{{end}}}
 </head>
 
 <body class="{bodyClass} skin-{{{if bootswatchSkin}}}{bootswatchSkin}{{{else}}}noskin{{{end}}}">
+	<a class="visually-hidden-focusable position-absolute top-0 start-0 p-3 m-3 bg-body" style="z-index: 1021;" href="#content">[[global:skip-to-content]]</a>
 
-	<a class="visually-hidden-focusable position-absolute top-0 start-0 p-3 m-3 bg-body" style="z-index: 1021;" href="#content">
-		[[global:skip-to-content]]
-	</a>
+	{{{ if config.theme.topMobilebar }}}
+	<!-- IMPORT partials/mobile-header.tpl -->
+	{{{ end }}}
 
-	<!-- IMPORT partials/sidebar-left.tpl -->
+	<div class="layout-container d-flex justify-content-between pb-4 pb-md-0">
+		<!-- IMPORT partials/sidebar-left.tpl -->
 
-	<main id="panel" class="slideout-panel">
-		<nav class="navbar navbar-expand-lg bg-light header border-bottom sticky-top" id="header-menu" component="navbar">
-			<div class="container-fluid">
-				<!-- IMPORT partials/menu.tpl -->
-			</div>
-		</nav>
-		
-		<script>
-			const rect = document.getElementById('header-menu').getBoundingClientRect();
-			const offset = Math.max(0, rect.bottom);
-			document.documentElement.style.setProperty('--panel-offset', offset + 'px');
-		</script>
-
-		<div class="container-fluid mt-4" id="content">
+		<main id="panel" class="d-flex flex-column gap-3 flex-grow-1" style="min-width: 0;">
+			<!-- IMPORT partials/header/brand.tpl -->
+			<div class="container-lg px-md-4 d-flex flex-column gap-3 h-100 mb-5 mb-lg-0" id="content">
 			<!-- IMPORT partials/noscript/warning.tpl -->
 			<!-- IMPORT partials/noscript/message.tpl -->
-
-			<div widget-area="header" class="widget-area">
-				{{{each widgets.header}}}
-				{{widgets.header.html}}
-				{{{end}}}
-			</div>
-
-			<div widget-area="brand-header" class="brand-header widget-area">
-				{{{each widgets.brand-header}}}
-				{{widgets.brand-header.html}}
-				{{{end}}}
-			</div>

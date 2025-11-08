@@ -31,18 +31,7 @@
 				<!-- IMPORT partials/header/brand.tpl -->
 			</div>
 		</div>
-		<!-- IMPORT templates/test-navigation.tpl -->
-		<!-- IMPORT templates/test-build.tpl -->
-		<!-- DEBUG: Testing if templates work -->
-		<div style="position: fixed; top: 10px; right: 10px; background: red; color: white; padding: 10px; z-index: 9999;">
-			HEADER TEMPLATE LOADED
-		</div>
 	</header>
-
-	<!-- Bottom Navigation -->
-	<!-- IMPORT partials/sidebar-left.tpl -->
-
-	<!-- IMPORT partials/footer-js.tpl -->
 
 	<!-- Main Content -->
 	<main id="content" class="ap-main-content">

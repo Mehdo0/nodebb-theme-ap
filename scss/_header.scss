@@ -1,38 +1,104 @@
-// Header styles for AP theme
+// =============================================
+// AP Theme Header Styles
+// =============================================
+
+// Header container - full width, centered content
+.ap-header {
+  width: 100%;
+  background: $ap-light-gray;
+  padding: $ap-gap-md 0;
+  border-bottom: 1px solid rgba($ap-dark-green, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  .ap-header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $ap-gap-md;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ap-logo-wrapper {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+// Brand container styling (wraps the logo from brand.tpl)
 .brand-container {
-  background: $ap-dark-green;
-  color: $ap-light-gray;
   display: block !important;
   visibility: visible !important;
-  opacity: 0.9 !important;
-  
+  opacity: 1 !important;
+  margin: 0;
+  padding: 0;
+
   .col-12 {
-    border-bottom-color: rgba($ap-dark-text, 0.06) !important;
-    padding-bottom: 0 !important; // Remove padding
+    padding: 0 !important;
+    border-bottom: none !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
+  // White box with gold border around logo
   [component="brand/wrapper"] {
-    padding: 1rem 0;
-    background: white; // White background box
-    border-radius: 12px; // Rounded borders
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
-    border: 2px solid #B89A65 !important; // Thin gold border
+    background: $white;
+    padding: $ap-gap-sm $ap-gap-lg;
+    border-radius: 12px;
+    border: 2px solid $ap-gold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: inline-flex;
+    align-items: center;
+    gap: $ap-gap-sm;
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+      transform: translateY(-2px);
+    }
   }
 
+  // Logo image
+  .ap-logo-img {
+    height: 48px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  // Brand text/title styling
   [component="brand/anchor"],
   [component="siteTitle"] {
     text-decoration: none;
-    color: $ap-dark-text; // Dark text on white background
+    color: $ap-dark-text;
   }
 
-  .ap-logo-img {
-    height: 54px;
-    width: auto;
-    display: block;
+  [component="siteTitle"] h1 {
+    font-family: $font-family-secondary;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $ap-dark-green;
+    margin: 0;
+    line-height: 1;
   }
 
-
+  // Responsive adjustments
   @media (max-width: 767px) {
-    .ap-logo-img { height: 40px; }
+    .ap-logo-img {
+      height: 36px;
+    }
+
+    [component="siteTitle"] h1 {
+      font-size: 1.125rem;
+    }
+
+    [component="brand/wrapper"] {
+      padding: $ap-gap-xs $ap-gap-md;
+    }
   }
 }

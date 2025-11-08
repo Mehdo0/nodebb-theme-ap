@@ -1,1 +1,1 @@
-<!-- IMPORT partials/shoutbox.tpl -->
+<div component="shoutbox/container" data-room="global" style="height: 600px;"></div>

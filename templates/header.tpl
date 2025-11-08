@@ -58,5 +58,6 @@
 		<!-- (You can re-enable later if needed)
 		<!-- IMPORT partials/sidebar.tpl -->
 	</div>
+	<!-- IMPORT partials/bottom-nav.tpl -->
 </body>
 </html>

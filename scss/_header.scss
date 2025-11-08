@@ -2,16 +2,16 @@
 // AP Theme Header Styles
 // =============================================
 
-// Header container - full width, centered content
+// Header container - dark green background
 .ap-header {
   width: 100%;
-  background: $ap-light-gray;
+  background: $ap-dark-green; // Changed from light gray to dark green
   padding: $ap-gap-md 0;
-  border-bottom: 1px solid rgba($ap-dark-green, 0.1);
+  border-bottom: 2px solid $ap-gold; // Gold border at bottom
   position: sticky;
   top: 0;
   z-index: 1020;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 
   .ap-header-container {
     max-width: 1200px;
@@ -36,6 +36,7 @@
   opacity: 1 !important;
   margin: 0;
   padding: 0;
+  background: transparent !important; // No background color
 
   .col-12 {
     padding: 0 !important;
@@ -50,16 +51,17 @@
     background: $white;
     padding: $ap-gap-sm $ap-gap-lg;
     border-radius: 12px;
-    border: 2px solid $ap-gold;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 2px solid $ap-gold !important; // Force gold border
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     display: inline-flex;
     align-items: center;
     gap: $ap-gap-sm;
     transition: all 0.3s ease;
 
     &:hover {
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
       transform: translateY(-2px);
+      border-color: $ap-gold !important;
     }
   }
 

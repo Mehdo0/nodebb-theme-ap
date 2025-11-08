@@ -2,123 +2,12 @@
 // AP Theme Bottom Navigation Bar
 // =============================================
 
-// Bottom navigation container
-.bottom-nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 60px;
-  background: $ap-dark-green;
-  border-top: 2px solid $ap-gold;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  z-index: 1030;
-  padding: 0 $ap-gap-sm;
-
-  // Individual navigation items
-  &__item {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: $ap-light-gray;
-    text-decoration: none;
-    padding: $ap-gap-xs;
-    border-radius: $border-radius-sm;
-    transition: all 0.2s ease;
-    position: relative;
-
-    i {
-      font-size: 1.25rem;
-      margin-bottom: 2px;
-      transition: all 0.2s ease;
-    }
-
-    span {
-      font-size: 0.625rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      opacity: 0.85;
-    }
-
-    // Hover state
-    &:hover {
-      color: $ap-gold;
-      background: rgba($white, 0.05);
-      transform: translateY(-2px);
-
-      i {
-        transform: scale(1.1);
-      }
-
-      span {
-        opacity: 1;
-      }
-    }
-
-    // Active state
-    &.active {
-      color: $ap-gold;
-      background: rgba($white, 0.1);
-
-      &::before {
-        content: '';
-        position: absolute;
-        top: -2px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 40px;
-        height: 3px;
-        background: $ap-gold;
-        border-radius: 0 0 3px 3px;
-      }
-    }
-  }
-
-  // Notification badge
-  &__badge {
-    position: absolute;
-    top: 2px;
-    right: 4px;
-    min-width: 16px;
-    height: 16px;
-    padding: 0 4px;
-    background: $danger;
-    color: $white;
-    font-size: 0.625rem;
-    font-weight: 600;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid $ap-dark-green;
-  }
-
-  // Responsive - larger touch targets on mobile
-  @media (max-width: 768px) {
-    height: 70px;
-
-    &__item {
-      i {
-        font-size: 1.5rem;
-      }
-
-      span {
-        font-size: 0.625rem;
-      }
-    }
-  }
-}
-
-// Alternative: If using NodeBB's built-in navigation
+// Force sidebar to appear as bottom navigation
+.sidebar,
+.sidebar-left,
 [component="sidebar/left"],
-.sidebar-left {
+.slideout-panel > .sidebar {
+  display: flex !important; // Force display
   position: fixed !important;
   bottom: 0 !important;
   top: auto !important;
@@ -129,63 +18,160 @@
   background: $ap-dark-green !important;
   border-top: 2px solid $ap-gold !important;
   border-right: none !important;
+  border-left: none !important;
+  border-bottom: none !important;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.15) !important;
   z-index: 1030 !important;
   transform: none !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 
-  .sidebar-toggle-container {
+  // Hide toggle button
+  .sidebar-toggle-container,
+  [component="sidebar/toggle"] {
     display: none !important;
   }
 
+  // Style the navigation menu
   #main-nav,
-  .nav-pills {
+  .nav-pills,
+  .nav,
+  ul {
     display: flex !important;
     flex-direction: row !important;
     justify-content: space-around !important;
     align-items: center !important;
     height: 100% !important;
+    width: 100% !important;
     margin: 0 !important;
     padding: 0 $ap-gap-sm !important;
     list-style: none !important;
+    flex-wrap: nowrap !important;
+  }
 
-    .nav-item {
-      flex: 1 !important;
-      margin: 0 !important;
+  // Navigation items
+  .nav-item,
+  li {
+    flex: 1 !important;
+    margin: 0 !important;
+    max-width: none !important;
+  }
 
-      .nav-link {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        color: $ap-light-gray !important;
-        padding: $ap-gap-xs !important;
-        border-radius: $border-radius-sm !important;
-        text-decoration: none !important;
-        transition: all 0.2s ease !important;
-        height: 100% !important;
+  // Navigation links
+  .nav-link,
+  a {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: $ap-light-gray !important;
+    padding: $ap-gap-xs $ap-gap-xs !important;
+    border-radius: $border-radius-sm !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    height: 50px !important;
+    width: 100% !important;
 
-        i {
-          font-size: 1.25rem !important;
-          margin-bottom: 2px !important;
-        }
+    // Icons
+    i,
+    .fa {
+      font-size: 1.25rem !important;
+      margin-bottom: 2px !important;
+      color: $ap-light-gray !important;
+      transition: all 0.2s ease !important;
+    }
 
-        .nav-text,
-        span {
-          font-size: 0.625rem !important;
-          font-weight: 500 !important;
-          text-transform: uppercase !important;
-          letter-spacing: 0.5px !important;
-        }
+    // Text labels
+    .nav-text,
+    span:not(.badge) {
+      font-size: 0.625rem !important;
+      font-weight: 500 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.5px !important;
+      color: $ap-light-gray !important;
+      margin-top: 2px !important;
+    }
 
-        &:hover {
-          color: $ap-gold !important;
-          background: rgba($white, 0.05) !important;
-          transform: translateY(-2px) !important;
-        }
+    // Hover state
+    &:hover {
+      color: $ap-gold !important;
+      background: rgba($white, 0.08) !important;
+      transform: translateY(-2px) !important;
 
-        &.active {
-          color: $ap-gold !important;
-          background: rgba($white, 0.1) !important;
-        }
+      i,
+      .fa {
+        color: $ap-gold !important;
+        transform: scale(1.1) !important;
+      }
+
+      .nav-text,
+      span:not(.badge) {
+        color: $ap-gold !important;
+      }
+    }
+
+    // Active state
+    &.active {
+      color: $ap-gold !important;
+      background: rgba($white, 0.12) !important;
+      position: relative;
+
+      i,
+      .fa {
+        color: $ap-gold !important;
+      }
+
+      .nav-text,
+      span:not(.badge) {
+        color: $ap-gold !important;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 3px;
+        background: $ap-gold;
+        border-radius: 0 0 3px 3px;
+      }
+    }
+  }
+
+  // Notification badges
+  .badge,
+  [component="notifications/icon"] .badge {
+    position: absolute !important;
+    top: 4px !important;
+    right: 4px !important;
+    min-width: 16px !important;
+    height: 16px !important;
+    padding: 0 4px !important;
+    background: $danger !important;
+    color: $white !important;
+    font-size: 0.625rem !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+    border: 2px solid $ap-dark-green !important;
+  }
+}
+
+// Responsive - larger on mobile
+@media (max-width: 768px) {
+  .sidebar,
+  .sidebar-left,
+  [component="sidebar/left"] {
+    height: 70px !important;
+
+    .nav-link,
+    a {
+      height: 60px !important;
+
+      i,
+      .fa {
+        font-size: 1.5rem !important;
       }
     }
   }

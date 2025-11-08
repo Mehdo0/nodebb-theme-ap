@@ -7,7 +7,7 @@ body.ap-theme {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding-bottom: 70px; // Space for bottom navigation
+  padding-bottom: 70px !important; // Space for bottom navigation
 }
 
 // Main content wrapper
@@ -93,11 +93,10 @@ body.ap-theme {
   }
 }
 
-// Hide default sidebars
-.sidebar,
-.sidebar-left,
+// REMOVED: Don't hide sidebars - let navigation.scss handle it
+// Hide only RIGHT sidebar
 .sidebar-right,
-[component="sidebar"] {
+[component="sidebar/right"] {
   display: none !important;
 }
 
@@ -121,7 +120,7 @@ body.ap-theme {
 // Responsive adjustments
 @media (max-width: 768px) {
   body.ap-theme {
-    padding-bottom: 80px; // More space on mobile
+    padding-bottom: 80px !important; // More space on mobile
   }
 
   .ap-content-wrapper {

@@ -1,4 +1,4 @@
-<div class="brand-container">
+<div class="brand-container mt-0">
 	<div class="col-12 d-flex border-bottom pb-3 justify-content-center">
 		<div component="brand/wrapper" class="d-flex align-items-center gap-2 p-2 rounded-1">
 			{{{ if brand:logo }}}

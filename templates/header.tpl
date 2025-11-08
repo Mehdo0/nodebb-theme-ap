@@ -23,4 +23,5 @@
 	</header>
 
 	<main id="content" class="ap-main-content">
+		<!-- IMPORT partials/sidebar-left.tpl -->
 		<div class="ap-content-wrapper">

@@ -2,9 +2,3 @@
 .sidebar-right, .col-sidebar-right, .widget-area-right, .widgets-right, [component="sidebar-right"] {
   display: none !important;
 }
-
-// Hide default sidebar-left when NOT bottom nav
-.sidebar-left:not(.ap-bottom-navigation),
-[component="sidebar/left"]:not(.ap-bottom-navigation) {
-  display: none !important;
-}

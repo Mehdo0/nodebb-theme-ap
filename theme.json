@@ -14,11 +14,11 @@
     "_sidebars.scss"
   ],
   "scripts": [
-    "public/lib/ap.js"
+    "lib/theme.js"
   ],
   "acpScripts": [],
   "modules": {
-    "../public/lib/ap.js": "public/lib/ap.js"
+    "/lib/theme.js": "lib/theme.js"
   },
   "languages": "public/languages",
   "sounds": [],

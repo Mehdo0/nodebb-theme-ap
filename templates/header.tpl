@@ -11,7 +11,7 @@
 		var app = {
 			user: JSON.parse('{{userJSON}}')
 		};
-		document.documentElement.style.setProperty('--panel-offset', `0px`);
+		document.documentElement.style.setProperty('--panel-offset', `${localStorage.getItem('panelOffset') || 0}px`);
 	</script>
 
 	{{{if useCustomHTML}}}
@@ -29,31 +29,19 @@
 		[[global:skip-to-content]]
 	</a>
 
-	<div class="container">
-		<div widget-area="header">
+	<!-- IMPORT partials/menu.tpl -->
+
+	<div class="layout-container d-flex flex-column">
+		<div widget-area="header" class="widget-area">
 			{{{each widgets.header}}}
-			{{widgets.content}}
+			{{widgets.header.html}}
 			{{{end}}}
 		</div>
 
-		<!-- IMPORT partials/menu.tpl -->
-
-		<div class="row">
-			<div class="col-12">
-				<div class="brand-container" widget-area="brand-header">
-					{{{each widgets.brand-header}}}
-					{widgets.content}
-					{{{end}}}
-				</div>
-			</div>
+		<div widget-area="brand-header" class="brand-header widget-area">
+			{{{each widgets.brand-header}}}
+			{{widgets.brand-header.html}}
+			{{{end}}}
 		</div>
 
 		<main id="content" class="page-content">
-			<!-- IMPORT partials/breadcrumbs.tpl -->
-		</main>
-	</div>
-
-	<!-- IMPORT partials/sidebar-left.tpl -->
-
-</body>
-</html>

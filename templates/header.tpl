@@ -1,36 +1,34 @@
-<!DOCTYPE html>
-<html lang="{function.localeToHTML, userLang, defaultLang}" {{{if languageDirection}}}data-dir="{languageDirection}" style="direction: {languageDirection};"{{{end}}}>
-<head>
-	<title>{browserTitle}</title>
-	{{{each metaTags}}}{function.buildMetaTag}{{{end}}}
-	<link rel="stylesheet" type="text/css" href="{relative_path}/assets/client{{{if bootswatchSkin}}}-{bootswatchSkin}{{{end}}}{{{ if (languageDirection=="rtl") }}}-rtl{{{ end }}}.css?{config.cache-buster}" />
-	{{{each linkTags}}}{function.buildLinkTag}{{{end}}}
-
-	<script>
-		var config = JSON.parse('{{configJSON}}');
-		var app = {
-			user: JSON.parse('{{userJSON}}')
-		};
-	</script>
-</head>
-
-<body class="{bodyClass} skin-{{{if bootswatchSkin}}}{bootswatchSkin}{{{else}}}noskin{{{end}}} ap-theme">
-	<!-- AP Header -->
-	<header class="ap-header">
-		<div class="ap-header-container">
-			<div class="ap-logo-wrapper">
-				<!-- IMPORT partials/header/brand.tpl -->
-			</div>
-		</div>
-	</header>
-
-	<main id="content" class="ap-main-content">
-		<div class="ap-content-wrapper">
-			<!-- IMPORT partials/noscript/warning.tpl -->
-			<!-- IMPORT partials/noscript/message.tpl -->
-			
-			<div widget-area="header" class="widget-area">
-				{{{each widgets.header}}}
-				{{widgets.header.html}}
-				{{{end}}}
-			</div>
+<header id="ap-header">
+    <!-- Keep original header content but add our nav -->
+    <div data-template="header" class="d-flex justify-content-between align-items-center px-3 py-2">
+        <!-- Original header content -->
+    </div>
+    
+    <!-- Bottom Navigation -->
+    <div id="ap-bottom-nav" class="ap-bottom-navigation">
+        <nav class="ap-nav-container">
+            <div class="ap-nav-items">
+                <a href="/" class="ap-nav-item" data-route="/">
+                    <i class="fa fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="/recent" class="ap-nav-item" data-route="/recent">
+                    <i class="fa fa-clock"></i>
+                    <span>Recent</span>
+                </a>
+                <a href="/unread" class="ap-nav-item" data-route="/unread">
+                    <i class="fa fa-inbox"></i>
+                    <span>Unread</span>
+                </a>
+                <a href="/popular" class="ap-nav-item" data-route="/popular">
+                    <i class="fa fa-fire"></i>
+                    <span>Popular</span>
+                </a>
+                <a href="/users" class="ap-nav-item" data-route="/users">
+                    <i class="fa fa-users"></i>
+                    <span>Users</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+</header>

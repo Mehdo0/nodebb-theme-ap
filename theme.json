@@ -1,8 +1,31 @@
 {
     "id": "nodebb-theme-ap",
-    "name": "AP",
-    "description": "The default theme for NodeBB. Uses a standard approach to forum design.",
+    "name": "AP Theme",
+    "description": "Custom Audemars Piguet theme with bottom navigation",
+    "version": "1.0.0",
+    "baseTheme": "nodebb-theme-harmony",
+    "screenshot": null,
     "url": "https://github.com/Mehdo0/nodebb-theme-ap",
-    "screenshot": "screenshot.png",
-    "baseTheme": "nodebb-theme-harmony"
+    "hooks": [
+        "static:app.load",
+        "filter:widgets.getAreas",
+        "filter:admin.header.build"
+    ],
+    "scripts": [
+        "lib/modules.js"
+    ],
+    "acpScripts": [
+        "lib/modules.js"
+    ],
+    "modules": {
+        "js": "lib/modules.js"
+    },
+    "staticDirs": {
+        "images": "public/images",
+        "fonts": "public/fonts"
+    },
+    "less": [
+        "assets/overrides.less"
+    ],
+    "templates": "templates"
 }

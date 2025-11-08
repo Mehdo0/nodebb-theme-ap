@@ -1,0 +1,101 @@
+// AP Theme Bottom Navigation
+#ap-bottom-nav {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #1a1a1a !important;
+    border-top: 1px solid #333 !important;
+    z-index: 9999 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: 60px !important;
+
+    .ap-nav-container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .ap-nav-items {
+        display: flex !important;
+        justify-content: space-around !important;
+        align-items: center !important;
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .ap-nav-item {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        color: #888 !important;
+        text-decoration: none !important;
+        padding: 8px 12px !important;
+        border-radius: 8px !important;
+        transition: all 0.2s ease !important;
+        min-width: 60px !important;
+        height: 50px !important;
+
+        i {
+            font-size: 18px !important;
+            margin-bottom: 2px !important;
+        }
+
+        span {
+            font-size: 10px !important;
+            font-weight: 500 !important;
+        }
+
+        &:hover {
+            color: #fff !important;
+            background: rgba(255,255,255,0.1) !important;
+        }
+
+        &.active {
+            color: #fff !important;
+            background: rgba(255,255,255,0.15) !important;
+        }
+    }
+}
+
+// Adjust body padding for bottom navigation
+body {
+    padding-bottom: 70px !important;
+}
+
+// Hide default sidebars if needed
+[component="sidebar-left"],
+[component="sidebar-right"] {
+    display: none !important;
+}
+
+// Mobile responsiveness
+@media (max-width: 768px) {
+    #ap-bottom-nav {
+        height: 55px !important;
+        
+        .ap-nav-item {
+            padding: 6px 8px !important;
+            min-width: 50px !important;
+            
+            i {
+                font-size: 16px !important;
+            }
+            
+            span {
+                font-size: 9px !important;
+            }
+        }
+    }
+    
+    body {
+        padding-bottom: 65px !important;
+    }
+}

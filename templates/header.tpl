@@ -26,21 +26,37 @@
 
 <body class="{bodyClass} skin-{{{if bootswatchSkin}}}{bootswatchSkin}{{{else}}}noskin{{{end}}}">
 
-    <a class="visually-hidden-focusable position-absolute top-0 start-0 p-3 m-3 bg-body" style="z-index: 1021;" href="#content">
-        [[global:skip-to-content]]
-    </a>
+    <div class="container">
+        <div widget-area="header">
+            {{{each widgets.header}}}
+            {{widgets.content}}
+            {{{end}}}
+        </div>
 
-    {{{if config.theme.topMobilebar}}}
-        <!-- IMPORT partials/mobile-header.tpl -->
-    {{{end}}}
+        <!-- IMPORT partials/menu.tpl -->
 
-    <!-- IMPORT partials/sidebar.tpl -->
+        <div class="row">
+            <div class="col-12">
+                <div class="brand-container" widget-area="brand-header">
+                    {{{each widgets.brand-header}}}
+                    {widgets.content}
+                    {{{end}}}
+                </div>
+            </div>
+        </div>
 
-    <main id="content">
-        <!-- Page content will go here -->
-    </main>
+        <div class="row">
+            <div class="col-12">
+                <main id="content" class="page-content">
+                    <!-- IMPORT partials/breadcrumbs.tpl -->
+                </main>
+            </div>
+        </div>
 
-    <!-- IMPORT partials/bottom-nav.tpl -->
+        <!-- IMPORT partials/footer.tpl -->
+    </div>
+
+    <!-- IMPORT partials/sidebar-left.tpl -->
 
 </body>
 </html>

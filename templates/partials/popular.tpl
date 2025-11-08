@@ -1,3 +1,10 @@
+<!--
+  This template replaces the 'Popular' page with a dedicated widget area.
+  It's designed to hold a full-page chat (like the NodeBB Shoutbox).
+  The data-widget-area="popularPageChat" tells NodeBB to make this
+  an area you can add widgets to in the admin panel.
+-->
+
 <div class="ap-chat-page-container" data-widget-area="popularPageChat">
     {{{each widgets.popularPageChat}}}
     {widgets.content}

@@ -15,7 +15,7 @@
 /* Common left nav selectors */
 [component="navigation"],
 nav[component="navigation"],
-.nav-pills.nav-stacked,
+.nav-stacked,
 .sidebar-left,
 .left-sidebar,
 .col-sidebar-left,
@@ -40,7 +40,7 @@ nav[component="navigation"],
 
 // Force vertical nav lists into horizontal layout
 [component="navigation"] .nav,
-.nav-pills,
+,
 .nav-stacked,
 .sidebar-left ul,
 .left-sidebar ul,

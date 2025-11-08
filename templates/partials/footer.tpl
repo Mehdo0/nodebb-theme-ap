@@ -3,13 +3,11 @@
 				{{widgets.footer.html}}
 				{{{end}}}
 			</div>
-		</div> <!-- Close ap-content-wrapper -->
-	</main> <!-- Close ap-main-content -->
+		</div>
+	</main>
 
-	<!-- Static Bottom Navigation -->
-	<div class="ap-bottom-navigation-static">
-		<!-- IMPORT partials/sidebar-left.tpl -->
-	</div>
+	<!-- Bottom Navigation -->
+	<!-- IMPORT partials/sidebar-left.tpl -->
 
 	<!-- IMPORT partials/footer-js.tpl -->
 </body>

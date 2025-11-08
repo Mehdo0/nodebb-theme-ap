@@ -2,12 +2,12 @@
 // AP Theme Layout Structure
 // =============================================
 
-// Body layout
+// Body layout - full height, flex column
 body.ap-theme {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding-bottom: 80px !important; // Space for static bottom navigation
+  padding-bottom: 74px !important; // Space for bottom navigation
   overflow-x: hidden;
 }
 
@@ -18,6 +18,7 @@ body.ap-theme {
   max-width: 100%;
   display: flex;
   flex-direction: column;
+  min-height: 0;
 }
 
 // Content wrapper - centers content with max width
@@ -48,56 +49,7 @@ body.ap-theme {
   }
 }
 
-// =============================================
-// SIDEBAR HIDING - CRITICAL FIXES
-// =============================================
-
-// Hide ALL default sidebars completely
-.sidebar-left,
-.sidebar-right,
-[component="sidebar/left"],
-[component="sidebar/right"],
-.col-xs-12.col-md-3.sidebar-left, // Common Harmony sidebar classes
-.col-xs-12.col-md-3.sidebar-right,
-.sidebar,
-.sidebar-container {
-  display: none !important;
-}
-
-// Hide the mobile bottom bar completely
-[component="bottomBar"],
-.bottomBar,
-.navigator-mobile,
-.bottomBar-new {
-  display: none !important;
-}
-
-// Hide any widget areas that might be appearing as sidebars
-[widget-area="sidebar"],
-[data-widget-area="sidebar"] {
-  display: none !important;
-}
-
-// Ensure main content takes full width
-.layout-container {
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-// Remove any default Bootstrap grid constraints
-.container,
-.container-fluid {
-  max-width: 100% !important;
-  padding: 0 !important;
-}
-
-.row {
-  margin: 0 !important;
-}
-
-// Widget areas in main content only
+// Widget areas
 .widget-area {
   width: 100%;
   margin-bottom: $ap-gap-md;

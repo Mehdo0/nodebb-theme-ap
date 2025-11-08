@@ -1,14 +1,17 @@
 // =============================================
-// AP Theme: Static Bottom Navigation Bar
+// AP Theme: Bottom Navigation Bar
+// Pure NodeBB Navigation styled as bottom bar
 // =============================================
 
-// Static bottom navigation container
-.ap-bottom-navigation-static {
+// Target the navigation container
+nav.ap-bottom-navigation,
+[component="sidebar/left"].ap-bottom-navigation {
+  // Position at bottom
   position: fixed !important;
   bottom: 0 !important;
   left: 0 !important;
   right: 0 !important;
-  z-index: 1030 !important;
+  top: auto !important;
   
   // Dimensions
   width: 100% !important;
@@ -19,149 +22,191 @@
   border-top: 2px solid $ap-gold !important;
   box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15) !important;
   
-  // The navigation inside
-  nav {
+  // Layout
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  
+  // Remove default styles
+  padding: 0 !important;
+  margin: 0 !important;
+  transform: none !important;
+  
+  z-index: 1030 !important;
+
+  // Navigation list
+  #main-nav,
+  .nav,
+  ul {
+    // Horizontal layout
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-around !important;
+    
+    // Sizing
     width: 100% !important;
+    max-width: 1200px !important;
     height: 100% !important;
     
-    // Layout
+    // Reset
+    margin: 0 !important;
+    padding: 0 $ap-gap-xs !important;
+    list-style: none !important;
+    gap: 0 !important;
+  }
+
+  // Navigation items
+  .nav-item,
+  li {
+    flex: 1 1 auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 120px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+  }
+
+  // Navigation links
+  .nav-link,
+  a {
+    // Layout
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 4px !important;
     
-    ul {
-      // Horizontal layout
-      display: flex !important;
-      flex-direction: row !important;
-      align-items: center !important;
-      justify-content: space-around !important;
-      
-      // Sizing
-      width: 100% !important;
-      max-width: 1200px !important;
-      height: 100% !important;
-      
-      // Reset
-      margin: 0 !important;
-      padding: 0 $ap-gap-xs !important;
-      list-style: none !important;
-    }
-
-    // Navigation items
-    li {
-      flex: 1 1 auto !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      max-width: 120px !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-    }
-
-    // Navigation links
-    a {
-      // Layout
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      justify-content: center !important;
-      gap: 4px !important;
-      
-      // Sizing
-      width: 100% !important;
-      height: 54px !important;
-      padding: $ap-gap-xs !important;
-      
-      // Styling
+    // Sizing
+    width: 100% !important;
+    height: 54px !important;
+    padding: $ap-gap-xs !important;
+    
+    // Styling
+    color: $ap-light-gray !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: $border-radius-sm !important;
+    text-decoration: none !important;
+    
+    // Transitions
+    transition: all 0.2s ease !important;
+    
+    // Icons
+    i,
+    .fa {
+      font-size: 1.35rem !important;
       color: $ap-light-gray !important;
-      background: transparent !important;
-      border: none !important;
-      border-radius: $border-radius-sm !important;
-      text-decoration: none !important;
-      
-      // Transitions
+      margin: 0 !important;
       transition: all 0.2s ease !important;
-      
-      // Icons
-      i {
-        font-size: 1.35rem !important;
-        color: $ap-light-gray !important;
-        margin: 0 !important;
-        transition: all 0.2s ease !important;
+    }
+
+    // Text labels
+    .nav-text,
+    span {
+      font-size: 0.65rem !important;
+      font-weight: 500 !important;
+      color: $ap-light-gray !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.3px !important;
+      white-space: nowrap !important;
+      margin: 0 !important;
+      line-height: 1 !important;
+    }
+
+    // Hover state
+    &:hover {
+      color: $ap-gold !important;
+      background: rgba($white, 0.08) !important;
+      transform: translateY(-3px) !important;
+
+      i,
+      .fa {
+        color: $ap-gold !important;
+        transform: scale(1.15) !important;
       }
 
-      // Text labels
+      .nav-text,
       span {
-        font-size: 0.65rem !important;
-        font-weight: 500 !important;
-        color: $ap-light-gray !important;
-        text-transform: uppercase !important;
-        letter-spacing: 0.3px !important;
-        white-space: nowrap !important;
-        margin: 0 !important;
-        line-height: 1 !important;
+        color: $ap-gold !important;
+      }
+    }
+
+    // Active state
+    &.active,
+    &[aria-current="page"] {
+      color: $ap-gold !important;
+      background: rgba($white, 0.12) !important;
+      position: relative !important;
+
+      i,
+      .fa {
+        color: $ap-gold !important;
       }
 
-      // Hover state
-      &:hover {
+      .nav-text,
+      span {
         color: $ap-gold !important;
-        background: rgba($white, 0.08) !important;
-        transform: translateY(-3px) !important;
-
-        i {
-          color: $ap-gold !important;
-          transform: scale(1.15) !important;
-        }
-
-        span {
-          color: $ap-gold !important;
-        }
+        font-weight: 600 !important;
       }
 
-      // Active state
-      &.active {
-        color: $ap-gold !important;
-        background: rgba($white, 0.12) !important;
-        position: relative !important;
-
-        i {
-          color: $ap-gold !important;
-        }
-
-        span {
-          color: $ap-gold !important;
-          font-weight: 600 !important;
-        }
-
-        // Top indicator line
-        &::before {
-          content: '' !important;
-          position: absolute !important;
-          top: 0 !important;
-          left: 50% !important;
-          transform: translateX(-50%) !important;
-          width: 50% !important;
-          height: 3px !important;
-          background: $ap-gold !important;
-          border-radius: 0 0 3px 3px !important;
-        }
+      // Top indicator line
+      &::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 50% !important;
+        height: 3px !important;
+        background: $ap-gold !important;
+        border-radius: 0 0 3px 3px !important;
       }
     }
   }
+
+  // Hide tooltips on bottom nav (they interfere)
+  .tooltip {
+    display: none !important;
+  }
+}
+
+// Hide the default sidebars
+.sidebar-right,
+[component="sidebar/right"] {
+  display: none !important;
+}
+
+// Hide original sidebar-left when NOT bottom nav
+.sidebar,
+.sidebar-left:not(.ap-bottom-navigation),
+[component="sidebar/left"]:not(.ap-bottom-navigation) {
+  display: none !important;
+}
+
+// Hide mobile bottom bar
+[component="bottomBar"],
+.bottomBar {
+  display: none !important;
 }
 
 // Responsive - mobile
 @media (max-width: 768px) {
-  .ap-bottom-navigation-static {
+  nav.ap-bottom-navigation,
+  [component="sidebar/left"].ap-bottom-navigation {
     height: 70px !important;
 
+    .nav-link,
     a {
       height: 60px !important;
 
-      i {
+      i,
+      .fa {
         font-size: 1.5rem !important;
       }
 
+      .nav-text,
       span {
         font-size: 0.6rem !important;
       }
@@ -171,16 +216,20 @@
 
 // Responsive - very small screens (hide text, icons only)
 @media (max-width: 480px) {
-  .ap-bottom-navigation-static {
-    a span {
+  nav.ap-bottom-navigation,
+  [component="sidebar/left"].ap-bottom-navigation {
+    .nav-text,
+    span {
       display: none !important;
     }
 
+    .nav-link,
     a {
       height: 60px !important;
       gap: 0 !important;
 
-      i {
+      i,
+      .fa {
         font-size: 1.75rem !important;
       }
     }

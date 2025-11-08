@@ -33,7 +33,7 @@
 		</div>
 	</header>
 
-	<!-- Main Content Area -->
+	<!-- Main Content -->
 	<main id="content" class="ap-main-content">
 		<div class="ap-content-wrapper">
 			<!-- IMPORT partials/noscript/warning.tpl -->

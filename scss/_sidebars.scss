@@ -148,6 +148,6 @@ body, .page, .content, .ap-main, main, #content {
 }
 
 /* Hide right sidebar entirely */
-.sidebar, .sidebar-right, .widget-area-right {
+.sidebar-right, .col-sidebar-right, .widget-area-right, .widgets-right, [component="sidebar-right"] {
   display: none !important;
 }
